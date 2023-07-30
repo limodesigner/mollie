@@ -1,6 +1,10 @@
 // @author Linda Moenstre <linda@digitaldesigner.no>
 
 // navigation menu
+$(".menu-toggle").click(function () {
+  $(".nav__wrapper").toggleClass("nav__wrapper--open", 500);
+  $(this).toggleClass("open");
+});
 
 // back to top btn
 let prevScrollPos = window.scrollY;

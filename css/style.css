@@ -29,7 +29,9 @@
   --clr-shadow-nav: rgba(0, 0, 0, 0.16) 0px 3px 6px,
     rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
-  --clr-shadow-up: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  --clr-shadow-up: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 
   --ff-primary: "manrope", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -98,7 +100,8 @@ body {
 }
 
 img,
-svg {
+svg,
+header {
   display: block;
   max-width: 100%;
 }
@@ -216,14 +219,7 @@ button {
   opacity: 0.8;
 }
 
-/* ----------- FORMS ---------- */
 
-input {
-  background-color: var(--clr-lightgrey-100);
-  border: solid 1px;
-  border-color: var(--clr-lightgrey-100);
-  height: 45px;
-}
 
 /* ---------- FOOTER ----------- */
 footer {
