@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Mollie.no</title>
 
+    <script src="./js/contact.js" defer></script>
+
     <!-- Hotjar Tracking Code for Mollie -->
     <script>
         (function (h, o, t, j, a, r) {
@@ -20,6 +22,44 @@
 </head>
 
 <body>
+
+    <header>
+
+    </header>
+    <main>
+        <div class="contact">
+            <div>
+                <div id="messageSuccess"></div>
+                <form action="" autocomplete="on" id="form">
+                    <fieldset>
+                        <legend>
+                            <span class="hide">Your information:</span>
+                        </legend>
+
+                        <div class="contact-box">
+                            <label for="name" class="contact-box__label">Name *</label>
+                            <input type="text" class="contact-box__input" id="name" aria-label="name">
+                            <div class="form-error" id="nameError">Please enter your name</div>
+                        </div>
+
+                        <div class="contact-box">
+                            <label for="email" class="contact-box__label">E-mail *</label>
+                            <input type="text" class="contact-box__input" id="email" aria-label="email">
+                            <div class="form-error" id="emailError">Please enter a valid email</div>
+                        </div>
+
+                        <div class="contact-box">
+                            <label for="message" class="contact-box__label">Message *</label>
+                            <textarea class="contact-box__textarea" id="message" rows="15"
+                                aria-label="message"></textarea>
+                            <div class="form-error" id="messageError">Please enter a message</div>
+                        </div>
+                    </fieldset>
+                    <button class="button" id="btnsubmit">Submit</button>
+
+                </form>
+            </div>
+    </main>
 
 </body>
 

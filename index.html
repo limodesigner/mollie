@@ -19,6 +19,8 @@
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="/css/style.css" />
     <script src="/js/index.js" type="module"></script>
     <title>Mollie shop | Home</title>
@@ -27,77 +29,166 @@
 </head>
 
 <body>
-    <noscript>You need to enable Javascript to run this app.</noscript>
+    <noscript>You need to enable Javascript to run this site.</noscript>
 
-    <div class="main-layout">
-        <header>
-            <nav class="menubar" aria-label="Menu">
-                <div class="wrapper">
-                    <div class="realative flex justify-center">
-                        <a href="index.html" class="menubar__button home" aria-label="To homepage">
-                            <img src="assets/img/mollie-mobile-menu.png" alt="Click for homepage">
+    <header>
+        <nav>
+            <div>
+                <ul class="navbar">
+                    <li class="logo">
+                        <a href="index.html"><img src="assets/img/mollie-mobil-menu.png"
+                                alt="Click for Mollie.no homepage" class="logo-symbol" aria-hidden="true" />
                         </a>
+                    </li>
+                    <li class="desktop"><a href="products.html">Shop</a></li>
+                    <li class="desktop"><a href="blogs.html">Blog</a></li>
+                    <li class="desktop"><a href="about.html">Contact</a></li>
+                    <li class="desktop">
+                        <form action="search.html" method="GET">
+                            <div class="header__search-btn">
+                                <span></span>
+                                <input type="text" name="search" placeholder="My cat wants..." aria-label="Search">
+                            </div>
+                            <button>
+                                <span class="material-symbols-rounded search">Search</span>
+                            </button>
+                        </form>
+                        </a>
+                    </li>
+                    <li class="desktop"><a href="index.html"><span class="material-symbols-rounded home">
+                                storefront </span></a>
+                    </li>
+
+                    <!-- logo__nav: Denne skal ha hamburgerfunksjon! -->
+                    <li class="logo__nav">
+                        <a href="index.html"><img src="assets/img/mollie-mobil-menu.png"
+                                alt="Click for Mollie.no homepage" class="logo-symbol" aria-hidden="true" />
+                        </a>
+                    </li>
+                    <div class="nav__icons">
+                        <li class="mobile"><a href="#"><i aria-hidden="true"><span class="material-symbols-rounded">
+                                        search
+                                    </span></i></a>
+                        <li class="mobile"><a href="#"><i aria-hidden="true"><span class="material-symbols-rounded fav">
+                                        favorite
+                                    </span></i></a>
+                        <li class="mobile"><a href="#"><i aria-hidden="true"><span class="material-symbols-rounded">
+                                        shopping_cart
+                                    </span></i></a>
+                        <li class="mobile"><a href="#"><i aria-hidden="true"><span class="material-symbols-rounded">
+                                        account_circle
+                                    </span></i></a>
                     </div>
-                    <ul class="menubar__bar">
-                        <li>
-                            <a href="#menu" class="menubar__item hidden">&nbsp;Close&nbsp;</a>
-                        </li>
-                        <li>
-                            <a href="products.html" class="menubar__item hidden">The Cat Shop</a>
-                        </li>
-                        <li>
-                        <li>
-                            <a href="blogs.html" class="menubar__item hidden">The Cat Blog</a>
-                        </li>
-                        </li>
-                        <li>
-                        <li>
-                            <a href="about.html" class="menubar__item hidden">About Mollie.no</a>
-                        </li>
-                        </li>
-                    </ul>
-                </div>
-                <a href="#top" class="menubar__button topofpage" aria-label="Top of page"></a>
+    </header>
 
-            </nav>
-        </header>
-        <main>
-            <div class="wrapper flow">
-                <h1>shop</h1>
-                <p>Lorem ipsum
-                    provident! Aut assumenda ipsa id magnam.</p>
+    <main>
 
-                <h2>Pate Lily's Kitchen for fish</h2>
-                <p>Lorem ipsum dolor sit amet constae, voluptate doloremque laboriosam nobis optio officia repudiandae.
-                </p>
+        <div class="logo-main">
+            <a href="index.html"> <img src="assets/img/logo-250px.png" alt="Click for Mollie.no homepage"
+                    class="logo-symbol" aria-hidden="true" />
+            </a>
+        </div>
+        <div class="flow">
+            <h1>shop</h1>
+            <p>Lorem ipsum
+                provident! Aut assumenda ipsa id magnam.</p>
 
-                <div class="container">
-                    <div class="products"></div>
-                </div>
+            <h2>Pate Lily's Kitchen for fish</h2>
 
-                <h3>blir vel ikke flere nå? Tenker vi er fint ferdig og lurer på hvordan!</h3>
+            <button class="test">testknapp</button>
 
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus consequuntur odio aliquam? Amet
-                    nisioribus!</p>
+            <p>Lorem ipsum dolor sit amet constae, voluptate doloremque laboriosam nobis optio officia repudiandae.
+            </p>
 
-                <h4>Liten blogg overskrift</h4>
-
-                <aside>
-                    <p class="media-scroller">bilde scroller inn her horisontalt med bilder</p>
-                </aside>
+            <div class="container">
+                <div class="products"></div>
             </div>
-        </main>
 
-        <footer>
-            <div class="footer-content">
+            <h3>blir vel ikke flere nå? Tenker vi er fint ferdig og lurer på hvordan!</h3>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus consequuntur odio aliquam? Amet
+                nisioribus!</p>
+
+            <h4>Liten blogg overskrift</h4>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita eveniet aspernatur ab illo dolorem! Eos
+                dicta sapiente sit voluptate! Nesciunt quia unde in, consequatur aliquid molestiae earum quis sapiente
+                eum.
+                Velit quos dignissimos minus ut, voluptatum, ad commodi tempora earum enim voluptatibus ipsa sed animi
+                quia repellendu
+                placeat? Voluptas soluta architecto ut sint labore rem animi, exercitationem fugit, quis enim et
+                obcaecati velit.</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum reiciendis ducimus tenetur esse porro
+                dolorum cumque quisquam, minima doloribus atque, harum quam quis blanditiis, veniam aliquid laboriosam
+                voluptatibus earum optio.
+                Tempore beatae aliquam soluta modi asperiores distinctio minus odit ut. Facere veniam optio nesciunt
+                nulla perferendis quis, laudantium assumenda vel aliquid ipsum ex! Necessitatibus dolorem tempore
+                r
+                Est porro, repudiandae recusandae nemo voluptatibus praesentium sequi molestiae eligendi corrupti omnis
+                aliquam similique! Vitae illo ducimus illum! Ipsam facere nisi earum aperiam? Ipsa ut non quasi ullam
+                voluptas hic?
+                Quibusdam praesentium neque sed ullam labore culpa fugiat, debitis at unde earum voluptatum illum
+                eligendi incidunt illo adipisci consequuntur excepturi numquam? Numquam exercitationem temporibus error
+                accusamus expedita tenetur dolor? Assumenda?</p>
+
+
+            <aside>
+                <p class="media-scroller">bilde scroller inn her horisontalt med bilder</p>
+            </aside>
+        </div>
+    </main>
+
+    <button class="backtotop" id="backToTopBtn" onclick="scrollToTop()"><span class="material-symbols-rounded">
+            arrow_upward
+        </span></button>
+
+    <footer class="footer">
+        <div class="footer-list">
+            <div class="footer-item">
+                <table>
+                    <caption class="caption footer-header">OPENING HOURS</caption>
+                    <tr>
+                        <th>Tuesday, Wednesday, Thursday</th>
+                        <td>10:00 - 16:00</td>
+                    </tr>
+                    <tr>
+                        <th>Friday, Saturday, Sunday</th>
+                        <td>9:00 - 16:00</td>
+                    </tr>
+                    <tr>
+                        <th>Monday</th>
+                        <td>Closed</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="footer-item">
+                <h3 class="footer-header">Get Involved</h3>
+                <ul class="footer-nav">
+                    <li><a href="involve.html">Support us</a></li>
+                    <li><a href="involve.html">Volunteer</a></li>
+                    <li><a href="involve.html">Internship</a></li>
+                    <li><a href="visit.html">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-item">
                 <div class="footer-logo"><img src="/assets/img/logo-250px.png" alt="Click for homepage"></div>
                 <div>
-                    <h3 class="copyright">Copyright &copy; <span id="currentYear"></span> Linda Moenstre
-                    </h3>
+                    <div>
+                        <a href="https://www.instagram.com/" target="_blank"><img src="images/svg/icon-instagram.svg"
+                                alt="Click to visit our Instagram-page." class="social">
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank"><img src="images/svg/icon-facebook.svg"
+                                alt="Click to visit our Facebook-page." class="social">
+                        </a>
+                        <h3 class="copyright">Copyright &copy; <span id="currentYear"></span> Linda Moenstre
+                        </h3>
+                    </div>
                 </div>
             </div>
-        </footer>
-    </div>
+
+    </footer>
+
 
 
 </body>

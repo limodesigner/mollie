@@ -1,5 +1,8 @@
 /* @author Linda Moenstre <linda@digitaldesigner.no> */
 
+@import url(header.css);
+@import url(footer.css);
+
 @font-face {
   font-family: "manrope";
   font-weight: 400;
@@ -8,8 +11,11 @@
 
 :root {
   --clr-body: #000000;
-  --clr-primary-800: #175c6c;
+  --clr-neutral-100: #ffffff;
+  --clr-neutral-700: #4d4d4d;
+  --clr-neutral-900: #333333;
   --clr-primary-600: #257385;
+  --clr-primary-800: #175c6c;
   --clr-secondary: #e6a8a9;
   --clr-accent-600: #83393a;
   --clr-accent-800: #742728;
@@ -20,39 +26,81 @@
   --clr-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
+  --clr-shadow-nav: rgba(0, 0, 0, 0.16) 0px 3px 6px,
+    rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+  --clr-shadow-up: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
+  --ff-primary: "manrope", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+
   --fs-300: clamp(0.88rem, calc(0.86rem + 0.09vw), 0.94rem);
   --fs-400: clamp(1.13rem, calc(1.09rem + 0.17vw), 1.25rem);
   --fs-500: clamp(1.69rem, calc(1.64rem + 0.26vw), 1.88rem);
   --fs-600: clamp(2.25rem, calc(2.19rem + 0.35vw), 2.5rem);
   --fs-700: clamp(3.38rem, calc(3.28rem + 0.52vw), 3.75rem);
-  --fs-800: clamp(4.5rem, calc(4.37rem + 0.7vw), 5rem);
+
+  --whitespace-1: 1rem;
+  --whitespace-2: 2rem;
+  --whitespace-3: 3rem;
+
+  --brad-4: 4px;
+  --brad-8: 8px;
+  --brad-50: 50px;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-* {
   margin: 0;
+  padding: 0;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  display: block;
+html,
+body {
+  max-width: 1440px;
+  margin: auto;
+  height: 100%;
+}
+
+html {
+  background-image: linear-gradient(
+    to bottom,
+    #bbded8,
+    #c6e4e6,
+    #d5e9f1,
+    #e4eff7,
+    #f2f5fb,
+    #f2f5fb,
+    #f2f5fb,
+    #f2f5fb,
+    #e4eff7,
+    #d5e9f1,
+    #c6e4e6,
+    #bbded8
+  );
+
+  scroll-behavior: smooth;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
 }
 
 body {
-  font-family: "manrope", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: var(--ff-primary);
   font-size: var(--fs-400);
   color: var(--clr-body);
   letter-spacing: 0.06rem;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
 }
 
 h1,
@@ -61,7 +109,6 @@ h3,
 h4 {
   line-height: 1.1;
   text-wrap: balance;
-  /* margin-bottom: 1rem; */
 }
 
 h1 {
@@ -84,11 +131,30 @@ h4 {
 }
 
 p {
+  font-size: var(--fs-400);
   /* margin-bottom: 1rem; */
 }
 
+::selection {
+  background-color: var(--clr-secondary);
+}
+
+.active {
+  text-decoration: underline;
+  text-decoration-color: var(--clr-primary-600);
+  text-decoration-thickness: 3px;
+  text-shadow: rgb(222, 255, 38) 1px 0 10px;
+}
+
 a {
-  color: var(--clr-primary-800);
+  color: var(--clr-neutral-900);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:link {
+  color: var(--clr-neutral-900);
 }
 
 a:hover,
@@ -96,66 +162,81 @@ a:focus {
   color: var(--clr-primary-600);
 }
 
-.wrapper {
-  width: min(100% - 3rem, 85ch);
-  margin-inline: auto;
-}
-
-.flow > * + * {
-  margin-top: var(--flow-space, 1em);
-}
-
-.media-scroller {
-  width: 100%;
-  /* height: 200px; */
-  /* aspect-ratio: 16 / 9; */
-  /* aspect-ratio: 1 / 2; */
-  /* aspect-ratio: 1 / 1; */
-  object-fit: cover;
-}
-
-/* ----------- MAIN LAYOUT------------*/
-
-.main-layout {
-  min-height: 100vh;
-  min-height: 100vdh;
-
-  display: grid;
-  grid-template-rows:
-    auto
-    1fr
-    auto;
-}
-
-header {
-  background-color: #fff;
+a:visited {
+  color: var(--clr-neutral-100);
 }
 
 main {
-  background-color: #e2e2e2;
+  background-color: var(--clr-neutral-100);
+  padding: 1.125rem;
 }
 
-footer {
-  background-color: var(--clr-lightgrey-100);
+.logo-main {
+  max-width: 250px;
+  padding: 0 1rem;
 }
 
-/* --------LOGO & NAVIGATION -------- */
+li {
+  list-style: none;
+  text-decoration: none;
+}
 
-.wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1440px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+/* .media-scroller {
   width: 100%;
+  height: 200px;
+  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 2;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+} */
+
+button {
+  position: relative;
 }
 
-.menubar {
-  pointer-events: none;
-  bottom: 2rem;
+#backToTopBtn {
+  cursor: pointer;
+  position: absolute;
+  bottom: 140px;
+  right: 55px;
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: var(--clr-primary-600);
+  color: var(--clr-neutral-100);
+  border-radius: var(--brad-50);
+  box-shadow: var(--clr-shadow-nav);
+  display: none;
 }
 
-/* ----------FOOTER ----------------- */
+#backToTopBtn:hover,
+#backToTopBtn:focus {
+  opacity: 0.8;
+}
+
+/* ----------- FORMS ---------- */
+
+input {
+  background-color: var(--clr-lightgrey-100);
+  border: solid 1px;
+  border-color: var(--clr-lightgrey-100);
+  height: 45px;
+}
+
+/* ---------- FOOTER ----------- */
+footer {
+  background-image: linear-gradient(
+    to right top,
+    #257385,
+    #317d8f,
+    #5c8f9a,
+    #8bbbc7,
+    #236675
+  );
+  padding: var(--whitespace-3);
+}
 
 .footer-content {
   display: flex;
@@ -173,8 +254,14 @@ footer {
 }
 
 /*--------MEDIA QUERIES------- */
-@media screen and (min-width: 1024px) {
-  body {
+@media screen and (min-width: 768px) {
+  main {
+    background-color: var(--clr-neutral-100);
     line-height: 1.6;
+    padding: 0 2rem;
   }
+}
+
+.logo {
+  padding: 0 2rem;
 }

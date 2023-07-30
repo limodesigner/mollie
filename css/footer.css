@@ -1,0 +1,78 @@
+/* @author Linda Moenstre <linda@digitaldesigner.no> */
+
+.footer {
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+}
+
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-items: flex-start;
+}
+
+.footer-item {
+  margin-inline: auto;
+}
+
+.footer-header {
+  font-family: var(--ff-secondary);
+  font-size: 28px;
+  padding-top: 2rem;
+}
+
+.caption {
+  caption-side: top;
+}
+
+table {
+  color: var(--clr-neutral-100);
+  padding: 1rem;
+}
+
+td {
+  padding: 0.5rem;
+}
+
+th {
+  font-weight: 300;
+}
+
+.footer-nav {
+  line-height: 2;
+}
+
+.footer-nav ul {
+  background-color: var(--clr-neutral-900);
+  color: var(--clr-neutral-100);
+}
+
+.footer-nav a:link {
+  color: var(--clr-neutral-100);
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus {
+  color: var(--clr-accent-600);
+  text-decoration: underline;
+}
+
+.footer-nav a:visited {
+  color: var(--clr-neutral-100);
+}
+
+.footer-logo {
+  padding: 2rem;
+}
+
+.social {
+  padding: 0 2.5rem 1rem;
+}
+
+.copyright {
+  color: var(--clr-neutral-100);
+  margin: 0.75rem 0 0 0;
+  padding: 2rem 0 5rem 0;
+  text-align: center;
+}
