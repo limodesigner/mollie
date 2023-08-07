@@ -61,7 +61,7 @@
 }
 
 html {
-  background-color: var(--clr-accent-400);  
+  background-color: var(--clr-accent-400);
   scroll-behavior: smooth;
   height: 100%;
 }
@@ -206,36 +206,6 @@ button {
 
 .material-symbols-rounded {
   font-size: 28px;
-}
-
-/* ---------- FOOTER ----------- */
-footer {
-  background-color: var(--clr-accent-400);
-  padding: var(--whitespace-3);
-}
-
-footer {
-  margin-top: auto;
-}
-
-.footer__wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  place-items: center;
-  gap: 1rem;
-}
-
-.footer__logo {
-  width: 150px;
-}
-
-.footer__bottom {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.copyright {
-  font-size: 14px;
 }
 
 /*--------MEDIA QUERIES------- */

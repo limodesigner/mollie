@@ -1,78 +1,30 @@
 /* @author Linda Moenstre <linda@digitaldesigner.no> */
 
-.footer {
-  background-color: var(--clr-neutral-900);
-  color: var(--clr-neutral-100);
+footer {
+  background-color: var(--clr-accent-400);
+  padding: var(--whitespace-3);
 }
 
-.footer-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-items: center;
-  align-items: flex-start;
+footer {
+  margin-top: auto;
 }
 
-.footer-item {
-  margin-inline: auto;
+.footer__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  place-items: center;
+  gap: 1rem;
 }
 
-.footer-header {
-  font-family: var(--ff-secondary);
-  font-size: 28px;
-  padding-top: 2rem;
+.footer__logo {
+  width: 150px;
 }
 
-.caption {
-  caption-side: top;
-}
-
-table {
-  color: var(--clr-neutral-100);
-  padding: 1rem;
-}
-
-td {
-  padding: 0.5rem;
-}
-
-th {
-  font-weight: 300;
-}
-
-.footer-nav {
-  line-height: 2;
-}
-
-.footer-nav ul {
-  background-color: var(--clr-neutral-900);
-  color: var(--clr-neutral-100);
-}
-
-.footer-nav a:link {
-  color: var(--clr-neutral-100);
-}
-
-.footer-nav a:hover,
-.footer-nav a:focus {
-  color: var(--clr-accent-600);
-  text-decoration: underline;
-}
-
-.footer-nav a:visited {
-  color: var(--clr-neutral-100);
-}
-
-.footer-logo {
-  padding: 2rem;
-}
-
-.social {
-  padding: 0 2.5rem 1rem;
+.footer__bottom {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .copyright {
-  color: var(--clr-neutral-100);
-  margin: 0.75rem 0 0 0;
-  padding: 2rem 0 5rem 0;
-  text-align: center;
+  font-size: 14px;
 }
