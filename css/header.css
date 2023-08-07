@@ -1,7 +1,7 @@
 /* @author Linda Moenstre <linda@digitaldesigner.no> */
 
 input {
-  background-color: var(--clr-lightgrey-100);
+  background-color: var(--clr-lightbrown-100);
   color: var(--clr-primary-800);
   border: solid 1px var(--clr-primary-600);
   height: 42px;

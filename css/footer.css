@@ -1,7 +1,7 @@
 /* @author Linda Moenstre <linda@digitaldesigner.no> */
 
 footer {
-  background-color: var(--clr-accent-400);
+  background-color: var(--clr-primary-600);
   padding: var(--whitespace-3);
 }
 
