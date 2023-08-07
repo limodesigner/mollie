@@ -89,6 +89,7 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
+  background-color: var(--clr-neutral-100);
   color: var(--clr-body);
   font-family: var(--ff-primary);
   font-size: var(--fs-400);
@@ -175,6 +176,7 @@ li {
 
 main {
   background-color: var(--clr-neutral-100);
+  margin-top: 7rem;
 }
 
 /* .media-scroller {
@@ -247,9 +249,16 @@ footer {
 
 /*--------MEDIA QUERIES------- */
 @media screen and (min-width: 768px) {
+
+  html {
+    margin: 1.5rem;
+  }
+
   main {
     margin-top: 210px;
     line-height: 1.6;
     padding: 0 2rem;
   }
+
+
 }
