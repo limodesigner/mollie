@@ -14,14 +14,15 @@
   --clr-neutral-100: #ffffff;
   --clr-neutral-700: #4d4d4d;
   --clr-neutral-900: #333333;
-  --clr-primary-600: #00ddff;
-  --clr-primary-800: #0049b7;
-  --clr-accent-300: #ffea19;
-  --clr-accent-400: #ffe0ed;
-  --clr-accent-600: #f75990;
-  --clr-accent-800: #ff1d58;
-  --clr-breadcrumb: #7e7e7e;
-  --clr-lightgrey-100: #f8f8f8;
+  --clr-primary-600: #BAC8DB;
+  --clr-primary-800: #6B7A8F;
+  --clr-primary-900: #2B3542;
+  --clr-accent-300: #F7C331;
+  --clr-accent-400: #DCC7AA;
+  --clr-accent-800: #C46D25;
+  --clr-accent-600: #F7882F;
+  --clr-breadcrumb: #78563B;
+  --clr-lightgrey-100: #FFF1DE;
   --clr-darkgrey-700: #a2aeb1;
 
   --clr-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
@@ -215,7 +216,7 @@ button {
   }
 
   main {
-    margin-top: 210px;
+    margin-top: 50px;
     line-height: 1.6;
     padding: 0 2rem;
   }
