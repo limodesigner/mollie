@@ -197,10 +197,10 @@ button {
 
 .backtotop {
   position: absolute;
-  bottom: 40px;
+  bottom: 30px;
   right: 20px;
-  width: 48px;
-  height: 48px;
+  width: 34px;
+  height: 34px;
   background-repeat: no-repeat;
   background-position: center;
   border: none;
@@ -215,6 +215,10 @@ button {
   background-color: var(--clr-primary-600);
   color: var(--clr-body);
   opacity: 0.8;
+}
+
+.material-symbols-rounded {
+ font-size: 32px;
 }
 
 /* ---------- FOOTER ----------- */
@@ -260,5 +264,11 @@ footer {
     padding: 0 2rem;
   }
 
+  .backtotop {
+    bottom: 40px;
+    right: 40px;
+    width: 48px;
+    height: 48px;
+  }
 
 }
