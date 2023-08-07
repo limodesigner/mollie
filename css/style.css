@@ -61,21 +61,7 @@
 }
 
 html {
-  background-image: linear-gradient(
-    to bottom,
-    #bbded8,
-    #c6e4e6,
-    #d5e9f1,
-    #e4eff7,
-    #f2f5fb,
-    #f2f5fb,
-    #f2f5fb,
-    #f2f5fb,
-    #e4eff7,
-    #d5e9f1,
-    #c6e4e6,
-    #bbded8
-  );
+  background-color: var(--clr-accent-400);  
   scroll-behavior: smooth;
   height: 100%;
 }
