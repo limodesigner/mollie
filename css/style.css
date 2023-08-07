@@ -14,11 +14,12 @@
   --clr-neutral-100: #ffffff;
   --clr-neutral-700: #4d4d4d;
   --clr-neutral-900: #333333;
-  --clr-primary-600: #257385;
-  --clr-primary-800: #175c6c;
-  --clr-secondary: #e6a8a9;
-  --clr-accent-600: #83393a;
-  --clr-accent-800: #742728;
+  --clr-primary-600: #00ddff;
+  --clr-primary-800: #0049b7;
+  --clr-accent-300: #ffea19;
+  --clr-accent-400: #ffe0ed;
+  --clr-accent-600: #f75990;
+  --clr-accent-800: #ff1d58;
   --clr-breadcrumb: #7e7e7e;
   --clr-lightgrey-100: #f8f8f8;
   --clr-darkgrey-700: #a2aeb1;
@@ -218,12 +219,12 @@ button {
 }
 
 .material-symbols-rounded {
- font-size: 32px;
+  font-size: 28px;
 }
 
 /* ---------- FOOTER ----------- */
 footer {
-  background-color: var(--clr-secondary);
+  background-color: var(--clr-accent-400);
   padding: var(--whitespace-3);
 }
 
@@ -253,7 +254,6 @@ footer {
 
 /*--------MEDIA QUERIES------- */
 @media screen and (min-width: 768px) {
-
   html {
     margin: 1.5rem;
   }
@@ -264,11 +264,14 @@ footer {
     padding: 0 2rem;
   }
 
+  .material-symbols-rounded {
+    font-size: 32px;
+  }
+
   .backtotop {
     bottom: 40px;
-    right: 40px;
+    right: 50px;
     width: 48px;
     height: 48px;
   }
-
 }
