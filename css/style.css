@@ -12,18 +12,19 @@
 :root {
   --clr-body: #000000;
   --clr-neutral-100: #ffffff;
-  --clr-neutral-700: #4d4d4d;
+  --clr-neutral-300: #d2d9df;
+  --clr-neutral-700: #868686;
   --clr-neutral-900: #333333;
-  --clr-primary-600: #bac8db;
-  --clr-primary-800: #6b7a8f;
+  --clr-primary-600: #868686;
+  --clr-primary-800: #9cbcb1;
   --clr-primary-900: #2b3542;
-  --clr-accent-300: #f7c331;
-  --clr-accent-400: #f7f3ed;
-  --clr-accent-800: #c46d25;
-  --clr-accent-600: #f7882f;
-  --clr-breadcrumb: #78563b;
-  --clr-lightbrown-100: #fff1de;
-  --clr-darkbrown-700: #b3a189;
+  --clr-accent-300: #f9b9a5;
+  --clr-accent-400: #ffe4c7;
+  --clr-accent-800: #f4764e;
+  --clr-accent-600: #f7aa6c;
+  --clr-breadcrumb: #a15239;
+  --clr-lightbrown-100: #fae2d5;
+  --clr-darkbrown-700: #b17d68;
 
   --clr-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -62,7 +63,6 @@
 }
 
 html {
-  background-color: var(--clr-accent-400);
   scroll-behavior: smooth;
   height: 100%;
 }
@@ -72,7 +72,6 @@ html {
 }
 
 body {
-  max-width: 1440px;
   min-height: 100%;
   margin: auto;
   display: flex;
@@ -128,16 +127,8 @@ p {
   background-color: var(--clr-secondary);
 }
 
-.active {
-  text-decoration: underline;
-  text-decoration-color: var(--clr-primary-600);
-  text-decoration-thickness: 3px;
-  text-shadow: rgb(222, 255, 38) 1px 0 10px;
-}
-
 a {
   cursor: pointer;
-  color: var(--clr-neutral-900);
   font-weight: bolder;
   text-transform: uppercase;
   text-decoration: none;
@@ -148,13 +139,18 @@ a:link {
 }
 
 a:hover,
-a:focus {
-  color: var(--clr-primary-800);
-  font-weight: bold;
+a:focus,
+.active {
+  color: var(--clr-primary-900);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+  text-decoration-color: var(--clr-accent-800);
 }
 
 a:visited {
-  color: var(--clr-primary-800);
+  color: var(--clr-neutral-900);
 }
 
 li {
@@ -163,6 +159,7 @@ li {
 }
 
 main {
+  max-width: 1440px;
   background-color: var(--clr-neutral-100);
   margin-top: 1rem;
   padding: 1rem;
@@ -180,7 +177,6 @@ main {
 button {
   position: relative;
   cursor: pointer;
-  background-color: var(--clr-primary-800);
   color: var(--clr-neutral-100);
 }
 
@@ -194,15 +190,15 @@ button {
   background-position: center;
   border: none;
   border-radius: var(--brad-50);
-  background-color: var(--clr-primary-800);
+  background-color: var(--clr-primary-900);
   box-shadow: var(--clr-shadow-nav);
   display: none;
 }
 
 .backtotop:hover,
 .backtotop:focus {
-  background-color: var(--clr-primary-600);
-  color: var(--clr-body);
+  background-color: var(--clr-primary-800);
+  color: var(--clr-neutral-900);
   opacity: 0.8;
 }
 
@@ -212,10 +208,6 @@ button {
 
 /*--------MEDIA QUERIES------- */
 @media screen and (min-width: 768px) {
-  html {
-    margin: 1.5rem;
-  }
-
   main {
     line-height: 1.6;
     padding: 0 2rem;
