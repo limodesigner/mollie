@@ -2,7 +2,7 @@ const productsContainer = document.querySelector(".products");
 
 const baseUrl = "https://api.noroff.dev/api/v1/rainy-days";
 
-async function getProducts() {
+async function fetchAndDisplayProduct() {
   try {
     const response = await fetch(baseUrl);
     const products = await response.json();
@@ -24,4 +24,4 @@ async function getProducts() {
   }
 }
 
-getProducts();
+fetchAndDisplayProduct();

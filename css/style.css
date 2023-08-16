@@ -1,6 +1,7 @@
 /* @author Linda Moenstre <linda@digitaldesigner.no> */
 
 @import url(header.css);
+@import url(main.css);
 @import url(footer.css);
 
 @font-face {
@@ -26,8 +27,7 @@
   --clr-lightbrown-100: #fae2d5;
   --clr-darkbrown-700: #b17d68;
 
-  --clr-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --clr-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   --clr-shadow-nav: rgba(0, 0, 0, 0.16) 0px 3px 6px,
     rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -173,6 +173,12 @@ main {
   aspect-ratio: 1 / 1;
   object-fit: cover;
 } */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+}
 
 button {
   position: relative;
