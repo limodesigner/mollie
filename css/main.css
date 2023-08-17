@@ -1,4 +1,6 @@
 .product {
+  padding: 1rem;
+  margin: 0.5rem;
   border-radius: 8px;
   box-shadow: var(--clr-shadow);
 }
@@ -12,7 +14,6 @@
 }
 
 @media screen and (min-width: 768px) {
-
   .product-image {
     height: 400px;
   }

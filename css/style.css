@@ -4,12 +4,6 @@
 @import url(main.css);
 @import url(footer.css);
 
-@font-face {
-  font-family: "manrope";
-  font-weight: 400;
-  src: url("../assets/fonts/manrope-400.woff2") format("woff2");
-}
-
 :root {
   --clr-body: #000000;
   --clr-neutral-100: #ffffff;
@@ -27,7 +21,8 @@
   --clr-lightbrown-100: #fae2d5;
   --clr-darkbrown-700: #b17d68;
 
-  --clr-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  --clr-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
   --clr-shadow-nav: rgba(0, 0, 0, 0.16) 0px 3px 6px,
     rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -103,11 +98,11 @@ h1 {
 }
 
 h2 {
-  font-size: var(--fs-600);
+  font-size: var(--fs-500);
 }
 
 h3 {
-  font-size: var(--fs-500);
+  font-size: var(--fs-400);
 }
 h4 {
   font-size: var(--fs-300);
