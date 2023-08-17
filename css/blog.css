@@ -6,6 +6,12 @@
   margin-bottom: var(--whitespace-2);
 }
 
+.blog-section {
+  background-color: var(--clr-accent-200);
+  border-radius: var(--brad-8);
+  box-shadow: var(--clr-shadow);
+}
+
 .post-card {
   padding: var(--whitespace-1);
 }
