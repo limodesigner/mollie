@@ -94,7 +94,8 @@ h4 {
   text-wrap: balance;
 }
 
-h1 {
+h1,
+h2 {
   font-size: var(--fs-600);
   text-transform: uppercase;
   padding: 2rem 1rem;
@@ -102,10 +103,7 @@ h1 {
 }
 
 h2 {
-  font-size: var(--fs-600);
-  text-transform: uppercase;
-  padding: 2rem 1rem;
-  color: var(--clr-accent-600);
+  font-size: var(--fs-500);
 }
 
 h3 {
@@ -113,7 +111,7 @@ h3 {
 }
 h4 {
   font-size: var(--fs-300);
-  color: var(--clr-darkbrown-700);
+  color: var(--clr-accent-900);
   text-transform: uppercase;
 }
 

@@ -1,8 +1,8 @@
 
 .product {
-  padding: 1rem;
+  padding: var(--whitespace-1);
   margin: 0.5rem;
-  border-radius: 8px;
+  border-radius: var(--brad-8);
   box-shadow: var(--clr-shadow);
 }
 
