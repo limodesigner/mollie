@@ -20,6 +20,7 @@
   width: 100%;
   max-height: 400px;
   object-fit: cover;
+  border-radius: var(--brad-8);
 }
 
 .post-title {
