@@ -14,14 +14,12 @@
   --clr-primary-600: #868686;
   --clr-primary-800: #9cbcb1;
   --clr-primary-900: #2b3542;
+  --clr-accent-200: #fbd6cb;
   --clr-accent-300: #f9b9a5;
   --clr-accent-400: #ffe4c7;
-  --clr-accent-900: #e5563e;
-  --clr-accent-800: #f4764e;
   --clr-accent-600: #f7aa6c;
-
-  --clr-lightbrown-100: #fae2d5;
-  --clr-darkbrown-700: #b17d68;
+  --clr-accent-800: #f4764e;
+  --clr-accent-900: #e5563e;
 
   --clr-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;

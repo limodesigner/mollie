@@ -39,7 +39,7 @@ fetchAndDisplayProduct(baseUrl);
 
 // URL to fetch new blog posts
 const apiUrl =
-  "https://mollie.no/wp-json/wp/v2/posts?_embed&per_page=2&_order=desc";
+  "https://mollie.no/wp-json/wp/v2/posts?_embed&per_page=4&_order=desc";
 const blogPostsContainer = document.getElementById("blog-posts");
 
 async function displayBlogPosts() {
