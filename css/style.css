@@ -156,7 +156,7 @@ li {
 }
 
 main {
-
+  max-width: 1440px;
   background-color: var(--clr-neutral-100);
   margin-top: 1rem;
   padding: 1rem;
