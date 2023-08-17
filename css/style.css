@@ -163,6 +163,7 @@ main {
 
 .main-wrapper {
   max-width: 1440px;
+  justify-items: center;
 }
 
 /* .media-scroller {
