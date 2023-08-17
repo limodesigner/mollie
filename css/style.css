@@ -2,6 +2,7 @@
 
 @import url(header.css);
 @import url(main.css);
+@import url(blog.css);
 @import url(footer.css);
 
 :root {
@@ -17,7 +18,7 @@
   --clr-accent-400: #ffe4c7;
   --clr-accent-800: #f4764e;
   --clr-accent-600: #f7aa6c;
-  --clr-breadcrumb: #a15239;
+  --clr-breadcrumb: #e5563e;
   --clr-lightbrown-100: #fae2d5;
   --clr-darkbrown-700: #b17d68;
 

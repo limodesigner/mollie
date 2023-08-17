@@ -1,3 +1,4 @@
+
 .product {
   padding: 1rem;
   margin: 0.5rem;
@@ -9,12 +10,13 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  height: 275px;
+  min-height: 300px;
   margin-top: 0.5rem;
 }
 
 @media screen and (min-width: 768px) {
+
   .product-image {
-    height: 400px;
+    min-height: 400px;
   }
 }

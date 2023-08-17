@@ -1,5 +1,7 @@
 // @author Linda Moenstre <linda@digitaldesigner.no>
 
+import { fetchBlogPosts } from "./api/api-blog.js";
+
 // URL for the "get all products" endpoint
 const baseUrl = "https://mollie.no/wp-json/wc/store/products?per_page=12";
 const consumerKey = "ck_4610f0d6eeb34112a6c99680b0dc29e1bfbf0068";
@@ -34,6 +36,59 @@ export async function fetchAndDisplayProduct(url) {
 }
 
 fetchAndDisplayProduct(baseUrl);
+
+// URL to fetch new blog posts
+const apiUrl =
+  "https://mollie.no/wp-json/wp/v2/posts?_embed&per_page=6&_order=desc";
+const blogPostsContainer = document.getElementById("blog-posts");
+
+async function displayBlogPosts() {
+  try {
+    const posts = await fetchBlogPosts(apiUrl);
+
+    posts.forEach((post) => {
+      const postCard = document.createElement("div");
+      postCard.classList.add("post-card");
+
+      const postThumbnail = document.createElement("img");
+      postThumbnail.classList.add("post-thumbnail");
+      postThumbnail.alt = "Post Thumbnail";
+
+      // Calculate and set the image source
+      const thumbnailUrl =
+        post._embedded["wp:featuredmedia"][0].media_details.sizes.medium
+          .source_url;
+      postThumbnail.src = thumbnailUrl;
+
+      const postTitle = document.createElement("h2");
+      postTitle.classList.add("post-title");
+      postTitle.textContent = post.title.rendered;
+
+      const postExcerpt = document.createElement("p");
+      postExcerpt.classList.add("post-excerpt");
+      postExcerpt.innerHTML = post.excerpt.rendered;
+
+      const readMoreButton = document.createElement("button");
+      readMoreButton.classList.add("read-more-button");
+      readMoreButton.textContent = "Read More";
+      readMoreButton.addEventListener("click", () => {
+        // Redirect to the full post URL
+        window.location.href = post.link;
+      });
+
+      postCard.appendChild(postThumbnail);
+      postCard.appendChild(postTitle);
+      postCard.appendChild(postExcerpt);
+      postCard.appendChild(readMoreButton);
+
+      blogPostsContainer.appendChild(postCard);
+    });
+  } catch (error) {
+    console.error("Error fetching blog posts:", error);
+  }
+}
+
+displayBlogPosts();
 
 // back to top btn
 let prevScrollPos = window.scrollY;
