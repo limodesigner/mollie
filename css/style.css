@@ -17,7 +17,6 @@
   --clr-accent-200: #fbd6cb;
   --clr-accent-300: #f9b9a5;
   --clr-accent-400: #ffe4c7;
-  --clr-accent-600: #f7aa6c;
   --clr-accent-800: #f4764e;
   --clr-accent-900: #e5563e;
 
@@ -68,13 +67,30 @@ html {
 
 body {
   min-height: 100%;
-  background-color: var(--clr-neutral-100);
   color: var(--clr-body);
   font-family: var(--ff-primary);
   font-size: var(--fs-400);
   letter-spacing: 0.06rem;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
+}
+
+.background {
+  background-image: linear-gradient(
+    to top,
+    #fbd6cb,
+    #fbd0c4,
+    #fbcbbc,
+    #fac5b5,
+    #fac0ae,
+    #fac0ae,
+    #fac0ae,
+    #fac0ae,
+    #fac5b5,
+    #fbcbbc,
+    #fbd0c4,
+    #fbd6cb
+  );
 }
 
 img,
@@ -157,7 +173,6 @@ main {
   max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
-  background-color: var(--clr-neutral-100);
   padding: 0.75rem;
 }
 

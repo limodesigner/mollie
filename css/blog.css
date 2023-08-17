@@ -3,21 +3,11 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: var(--whitespace-2);
-  max-width: 1400px;
   margin-bottom: var(--whitespace-2);
 }
 
-.blogs {
-  background-color: var(--clr-accent-300);
-}
-
 .post-card {
-  border-radius: var(--brad-8);
   padding: var(--whitespace-1);
-}
-
-.post-card:hover {
-  background-color: var(--clr-accent-200);
 }
 
 .post-thumbnail {

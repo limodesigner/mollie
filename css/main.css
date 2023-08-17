@@ -1,5 +1,5 @@
-
 .product {
+  background-color: var(--clr-neutral-100);
   padding: var(--whitespace-1);
   margin: 0.5rem;
   border-radius: var(--brad-8);
@@ -15,7 +15,6 @@
 }
 
 @media screen and (min-width: 768px) {
-
   .product-image {
     min-height: 400px;
   }
