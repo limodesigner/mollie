@@ -16,9 +16,10 @@
   --clr-primary-900: #2b3542;
   --clr-accent-300: #f9b9a5;
   --clr-accent-400: #ffe4c7;
+  --clr-accent-900: #e5563e;
   --clr-accent-800: #f4764e;
   --clr-accent-600: #f7aa6c;
-  --clr-breadcrumb: #e5563e;
+
   --clr-lightbrown-100: #fae2d5;
   --clr-darkbrown-700: #b17d68;
 
@@ -97,11 +98,14 @@ h1 {
   font-size: var(--fs-600);
   text-transform: uppercase;
   padding: 2rem 1rem;
-  color: var(--clr-breadcrumb);
+  color: var(--clr-accent-900);
 }
 
 h2 {
-  font-size: var(--fs-500);
+  font-size: var(--fs-600);
+  text-transform: uppercase;
+  padding: 2rem 1rem;
+  color: var(--clr-accent-600);
 }
 
 h3 {

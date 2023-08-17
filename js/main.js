@@ -39,7 +39,7 @@ fetchAndDisplayProduct(baseUrl);
 
 // URL to fetch new blog posts
 const apiUrl =
-  "https://mollie.no/wp-json/wp/v2/posts?_embed&per_page=6&_order=desc";
+  "https://mollie.no/wp-json/wp/v2/posts?_embed&per_page=2&_order=desc";
 const blogPostsContainer = document.getElementById("blog-posts");
 
 async function displayBlogPosts() {
@@ -60,7 +60,7 @@ async function displayBlogPosts() {
           .source_url;
       postThumbnail.src = thumbnailUrl;
 
-      const postTitle = document.createElement("h2");
+      const postTitle = document.createElement("h3");
       postTitle.classList.add("post-title");
       postTitle.textContent = post.title.rendered;
 
