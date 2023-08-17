@@ -157,14 +157,11 @@ li {
 
 main {
   max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--clr-neutral-100);
   margin-top: 1rem;
   padding: 1rem;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
 }
 
 /* .media-scroller {
