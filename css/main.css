@@ -1,3 +1,22 @@
+.buy-button {
+  font-size: var(--fs-400);
+  font-weight: bolder;
+  text-transform: uppercase;
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-accent-900);
+  box-shadow: var(--clr-shadow);
+  border: none;
+  border-radius: var(--brad-8);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.buy-button:hover,
+.buy-button:focus {
+  background-color: var(--clr-accent-900);
+  color: var(--clr-neutral-100);
+}
+
 .product {
   background-color: var(--clr-neutral-100);
   padding: var(--whitespace-1);

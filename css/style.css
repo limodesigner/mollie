@@ -170,6 +170,11 @@ li {
   text-decoration: none;
 }
 
+.light {
+  color: var(--clr-neutral-100);
+  padding-bottom: 1rem;
+}
+
 main {
   max-width: 1440px;
   margin-left: auto;
