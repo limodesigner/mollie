@@ -6,9 +6,7 @@
   margin: var(--whitespace-2);
 }
 
-.blog-section {
-  padding: var(--whitespace-1);
-}
+
 
 .blog-header {
   background-color: var(--clr-accent-900);
@@ -17,9 +15,9 @@
   border-radius: var(--brad-8);
 }
 
-.post-card {
+/* .post-card {
   padding: var(--whitespace-1);
-}
+} */
 
 .post-thumbnail {
   width: 100%;
