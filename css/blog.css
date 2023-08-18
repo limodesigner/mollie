@@ -12,7 +12,7 @@
 
 .blog-header {
   background-color: var(--clr-accent-900);
-  color: var(--clr-accent-200);
+  color: var(--clr-primary-900);
   padding: var(--whitespace-1);
   border-radius: var(--brad-8);
 }

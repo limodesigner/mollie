@@ -8,17 +8,17 @@
 :root {
   --clr-body: #000000;
   --clr-neutral-100: #ffffff;
-  --clr-neutral-300: #eeeeee;
-  --clr-neutral-700: #868686;
+  --clr-neutral-300: #f5f5ef;
+  --clr-neutral-700: #bfbfbf;
   --clr-neutral-900: #333333;
-  --clr-primary-600: #d4b556;
-  --clr-primary-800: #50ad95;
-  --clr-primary-900: #2b3542;
-  --clr-accent-200: #fbd6cb;
-  --clr-accent-300: #f9b9a5;
-  --clr-accent-400: #ffe4c7;
-  --clr-accent-800: #f4764e;
-  --clr-accent-900: #e5563e;
+  --clr-primary-600: #a6cfd9;
+  --clr-primary-800: #54adbd;
+  --clr-primary-900: #008095;
+  --clr-accent-200: #b5d3bc;
+  --clr-accent-300: #79b38c;
+  --clr-accent-400: #d5c29a;
+  --clr-accent-800: #007d3c;
+  --clr-accent-900: #ddc27b;
 
   --clr-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
