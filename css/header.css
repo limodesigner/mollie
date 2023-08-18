@@ -15,7 +15,7 @@ header {
 }
 
 .hero-text {
-  padding: 10rem 0 0 2rem;
+  padding: 20rem 0 0 2rem;
 }
 
 input {
@@ -95,19 +95,17 @@ input {
     max-height: 68px;
     margin: 1rem 0;
   }
-}
 
-@media screen and (max-width: 1024px) {
   .hero {
     background-image: url(../assets/img/mollie-treats_medium.jpg);
     background-size: cover;
-    background-position: center right;
     color: var(--clr-accent-900);
-    height: 700px;
+    height: 550px;
+    margin-bottom: var(--whitespace-1);
   }
 
   .hero-text {
-    padding: 26rem 0 0 1.5rem;
+    padding: 24rem 0 0 1.5rem;
   }
 }
 

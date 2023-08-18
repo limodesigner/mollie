@@ -8,10 +8,10 @@
 :root {
   --clr-body: #000000;
   --clr-neutral-100: #ffffff;
-  --clr-neutral-300: #d2d9df;
+  --clr-neutral-300: #eeeeee;
   --clr-neutral-700: #868686;
   --clr-neutral-900: #333333;
-  --clr-primary-600: #868686;
+  --clr-primary-600: #d4b556;
   --clr-primary-800: #50ad95;
   --clr-primary-900: #2b3542;
   --clr-accent-200: #fbd6cb;
@@ -76,21 +76,7 @@ body {
 }
 
 .background {
-  background-image: linear-gradient(
-    to bottom,
-    #fbd6cb,
-    #fcdcd4,
-    #fde3dc,
-    #fee9e5,
-    #fff0ed,
-    #fff0ed,
-    #fff0ed,
-    #fff0ed,
-    #fee9e5,
-    #fde3dc,
-    #fcdcd4,
-    #fbd6cb
-  );
+  background-color: var(--clr-neutral-300);
 }
 
 img,
@@ -112,8 +98,8 @@ h4 {
 h1,
 h2 {
   font-size: var(--fs-600);
+  color: var(--clr-neutral-900);
   text-transform: uppercase;
-  color: var(--clr-accent-900);
   margin: 1rem 0;
 }
 
