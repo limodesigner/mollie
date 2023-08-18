@@ -11,14 +11,21 @@
   --clr-neutral-300: #f5f5ef;
   --clr-neutral-700: #bfbfbf;
   --clr-neutral-900: #333333;
-  --clr-primary-600: #a6cfd9;
-  --clr-primary-800: #54adbd;
-  --clr-primary-900: #008095;
-  --clr-accent-200: #b5d3bc;
-  --clr-accent-300: #79b38c;
+  --clr-primary-300: #a3c5d2;
+  --clr-primary-600: #72a7ba;
+  --clr-primary-800: #00778f;
+  --clr-primary-900: #00546c;
+  --clr-secondary-100: #e9eddd;
+  --clr-secondary-300: #cad4a9;
+  --clr-secondary-500: #a9b872;
+  --clr-secondary-700: #96a953;
+  --clr-secondary-900: #708e15;
+
+  --clr-accent-200: #f5edda;
+  /* --clr-accent-300: #79b38c;
   --clr-accent-400: #d5c29a;
-  --clr-accent-800: #007d3c;
-  --clr-accent-900: #ddc27b;
+  --clr-accent-800: #007d3c; */
+  --clr-accent-900: #d6bf72;
 
   --clr-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
     rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
