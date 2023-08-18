@@ -6,10 +6,8 @@
   margin: var(--whitespace-2);
 }
 
-
-
 .blog-header {
-  background-color: var(--clr-accent-900);
+  font-weight: bolder;
   color: var(--clr-primary-900);
   padding: var(--whitespace-1);
   border-radius: var(--brad-8);
