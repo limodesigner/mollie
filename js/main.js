@@ -9,7 +9,7 @@ const consumerSecret = "cs_7f1291d689278bcb23359a9a9662dbac95a4a1a4";
 
 const productContainer = document.querySelector(".products");
 
-export async function fetchAndDisplayProduct(url) {
+async function fetchAndDisplayProduct(url) {
   try {
     const response = await fetch(url);
     const products = await response.json();

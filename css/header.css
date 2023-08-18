@@ -1,5 +1,24 @@
 /* @author Linda Moenstre <linda@digitaldesigner.no> */
 
+header {
+  background-color: var(--clr-neutral-100);
+  padding-bottom: var(--whitespace-1);
+  box-shadow: var(--clr-shadow);
+}
+
+.hero {
+  background-image: url(../assets/img/mollie-treats_medium.jpg);
+  background-size: cover;
+  background-position: center right;
+  min-height: 500px;
+  color: var(--clr-accent-900);
+
+}
+
+.hero-text {
+  padding: 20rem 0 0 2rem;
+}
+
 input {
   background-color: var(--clr-lightbrown-100);
   color: var(--clr-primary-800);
@@ -70,14 +89,28 @@ input {
 
   .logo {
     max-width: 200px;
-    padding: 2.5rem 1rem;
+    padding: 2rem 1rem;
   }
 
   .mobile__img {
     max-height: 68px;
     margin: 1rem 0;
   }
+
+  .hero {
+    background-image: url(../assets/img/mollie-treats.jpg);
+    background-size: cover;
+    background-position: center right;
+    color: var(--clr-accent-900);
+    padding-top: 7rem;
+    padding-bottom: 1rem;
+  }
+  
+  .hero-text {
+    padding: 2rem;
+  }
 }
+
 
 @media screen and (min-width: 1441px) {
   .search__position {

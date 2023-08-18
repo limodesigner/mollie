@@ -12,7 +12,7 @@
   --clr-neutral-700: #868686;
   --clr-neutral-900: #333333;
   --clr-primary-600: #868686;
-  --clr-primary-800: #9cbcb1;
+  --clr-primary-800: #50ad95;
   --clr-primary-900: #2b3542;
   --clr-accent-200: #fbd6cb;
   --clr-accent-300: #f9b9a5;
@@ -77,18 +77,18 @@ body {
 
 .background {
   background-image: linear-gradient(
-    to top,
+    to bottom,
     #fbd6cb,
-    #fbd0c4,
-    #fbcbbc,
-    #fac5b5,
-    #fac0ae,
-    #fac0ae,
-    #fac0ae,
-    #fac0ae,
-    #fac5b5,
-    #fbcbbc,
-    #fbd0c4,
+    #fcdcd4,
+    #fde3dc,
+    #fee9e5,
+    #fff0ed,
+    #fff0ed,
+    #fff0ed,
+    #fff0ed,
+    #fee9e5,
+    #fde3dc,
+    #fcdcd4,
     #fbd6cb
   );
 }
@@ -106,14 +106,15 @@ h3,
 h4 {
   line-height: 1.1;
   text-wrap: balance;
+  word-break: break-all;
 }
 
 h1,
 h2 {
   font-size: var(--fs-600);
   text-transform: uppercase;
-  padding: 2rem 1rem;
   color: var(--clr-accent-900);
+  margin: 1rem 0;
 }
 
 h2 {
@@ -131,7 +132,7 @@ h4 {
 
 p {
   font-size: var(--fs-400);
-  /* margin-bottom: 1rem; */
+  color: var(--clr-neutral-900);
 }
 
 ::selection {
