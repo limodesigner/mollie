@@ -8,7 +8,7 @@
 
 .blog-header {
   font-weight: bolder;
-  color: var(--clr-primary-900);
+  color: var(--clr-secondary-900);
   padding: var(--whitespace-1);
   border-radius: var(--brad-8);
 }
@@ -29,7 +29,7 @@
 }
 
 .read-more-button {
-  background-color: var(--clr-neutral-900);
+  background-color: var(--clr-secondary-700);
   color: var(--clr-neutral-100);
   font-size: inherit;
   font-weight: bolder;
