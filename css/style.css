@@ -6,7 +6,7 @@
 @import url(footer.css);
 
 :root {
-  --clr-body: #000000;
+  --clr-body: #333333;
   --clr-neutral-100: #ffffff;
   --clr-neutral-300: #f5f5ef;
   --clr-neutral-700: #bfbfbf;
