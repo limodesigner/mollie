@@ -10,7 +10,7 @@
 
 .blog-header {
   font-weight: bolder;
-  color: var(--clr-secondary-900);
+  color: var(--clr-primary-900);
   padding: var(--whitespace-1);
   border-radius: var(--brad-8);
 }
