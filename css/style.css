@@ -210,6 +210,17 @@ button {
   color: var(--clr-secondary-900);
 }
 
+.hide {
+  display: none;
+}
+
+.lightblue {
+  background-color: var(--clr-primary-600);
+  padding: var(--whitespace-1);
+  border-radius: var(--brad-8);
+  margin: 1rem 0;
+}
+
 .backtotop {
   position: absolute;
   bottom: 30px;
