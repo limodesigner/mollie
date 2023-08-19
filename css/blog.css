@@ -20,7 +20,8 @@
 
 .blog-header {
   color: var(--clr-primary-900);
-  margin-bottom: 1rem;
+  border-top-right-radius: var(--brad-4);
+  margin: var(--whitespace-1);
 }
 
 .blog-post .post-image {
@@ -69,7 +70,7 @@
 }
 
 .blog-column-right {
-  background-color: var(--clr-secondary-700);
+  background-color: var(--clr-secondary-500);
   flex: 1;
   order: 2;
   min-width: 100%;
@@ -79,6 +80,16 @@
 .blog-tags {
   background-color: var(--clr-secondary-300);
   padding: var(--whitespace-1);
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #007bff;
 }
 
 @media screen and (min-width: 768px) {

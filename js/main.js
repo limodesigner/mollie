@@ -2,6 +2,7 @@
 
 import {
   fetchRecentBlogPosts,
+  fetchBlogPosts,
   fetchBlogCategories,
   fetchBlogTags,
 } from "./api/blog-api.js";
@@ -13,19 +14,60 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function displayRecentBlogPosts() {
-  const recentBlogPosts = await fetchRecentBlogPosts();
-  const blogPostsContainer = document.getElementById("blog-posts");
+  const allBlogPosts = await fetchRecentBlogPosts();
+  const blogPostsContainer = document.getElementById("blog-posts-all"); // Use 'blog-posts-all' ID
 
   if (blogPostsContainer) {
-    const numberOfPostsToShow = 3; // Adjust this number as needed
-
-    for (let i = 0; i < numberOfPostsToShow; i++) {
-      const postComponent = createBlogPostComponent(recentBlogPosts[i]);
+    allBlogPosts.forEach((post) => {
+      const postComponent = createBlogPostComponent(post);
       blogPostsContainer.appendChild(postComponent);
-    }
+    });
   } else {
     console.error("Container element not found.");
   }
+}
+
+async function displayBlogPosts(page) {
+  const perPage = 10; // Adjust the number of posts per page as needed
+  const blogPostsContainer = document.getElementById('blog-posts-all');
+
+  if (blogPostsContainer) {
+      const blogPosts = await fetchBlogPosts(page, perPage);
+
+      if (blogPosts.length > 0) {
+          blogPosts.forEach(post => {
+              const postComponent = createBlogPostComponent(post);
+              blogPostsContainer.appendChild(postComponent);
+          });
+
+          createPagination(blogPostsContainer, page, perPage, blogPosts.length);
+      } else {
+          blogPostsContainer.innerHTML = '<p>No blog posts found.</p>';
+      }
+  } else {
+      console.error('Container element not found.');
+  }
+}
+
+function createPagination(container, currentPage, perPage, totalPosts) {
+  const totalPages = Math.ceil(totalPosts / perPage);
+
+  const paginationContainer = document.createElement('div');
+  paginationContainer.className = 'pagination';
+
+  for (let i = 1; i <= totalPages; i++) {
+      const pageLink = document.createElement('a');
+      pageLink.href = `javascript:void(0);`;
+      pageLink.textContent = i;
+      pageLink.addEventListener('click', () => {
+          container.innerHTML = ''; // Clear the container before fetching new page
+          displayBlogPosts(i);
+      });
+
+      paginationContainer.appendChild(pageLink);
+  }
+
+  container.appendChild(paginationContainer);
 }
 
 async function displayBlogCategoriesAndTags() {
