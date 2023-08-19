@@ -55,7 +55,36 @@
 
 /* blog category page */
 
+.blog-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .blog-column-left {
   background-color: var(--clr-neutral-100);
   padding: 2rem;
+  flex: 2;
+  order: 1;
+  min-width: 100%;
+}
+
+.blog-column-right {
+  background-color: var(--clr-secondary-700);
+  flex: 1;
+  order: 2;
+  min-width: 100%;
+}
+
+.blog-categories,
+.blog-tags {
+  background-color: var(--clr-secondary-300);
+  padding: var(--whitespace-1);
+}
+
+@media screen and (min-width: 768px) {
+  .blog-column-left,
+  .blog-column-right {
+    order: 0;
+    min-width: auto;
+  }
 }
