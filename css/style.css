@@ -112,7 +112,6 @@ h2 {
 h3 {
   font-size: var(--fs-500);
   text-transform: none;
-  color: var(--clr-primary-900);
 }
 h4 {
   font-size: var(--fs-300);
@@ -198,6 +197,11 @@ main {
 button {
   position: relative;
   cursor: pointer;
+}
+
+.arrow-right {
+  font-weight: lighter;
+  color: var(--clr-secondary-900);
 }
 
 .backtotop {

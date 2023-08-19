@@ -13,7 +13,7 @@ export function createBlogPostComponent(post) {
                 <h3 class="post-title">${postTitle}</h3>
             </a>
             <div class="post-excerpt">${postExcerpt}</div>
-            <a href="${postLink}" class="read-more-button">Read More</a>
+            <a href="${postLink}" class="read-more-button">Read <span class="arrow-right">>>></span></a>
         </div>
     `;
 

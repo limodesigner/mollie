@@ -10,7 +10,7 @@
 
 .blog-post {
   margin-bottom: 2rem;
-  border-bottom: 1px dashed var(--clr-accent-900);
+  border-bottom: 1px dashed var(--clr-secondary-300);
 }
 
 .blog-post .post-link {
@@ -33,7 +33,6 @@
 
 .blog-post .post-excerpt {
   color: var(--clr-neutral-700);
-  flex: 1;
   margin-bottom: 10px;
 }
 
