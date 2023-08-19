@@ -1,35 +1,32 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
-import { fetchAndDisplaySingleBlogPost } from "./components/single-blog-post.js";
-import { fetchAndDisplayBlogCategories } from "./components/blog-post-categories.js";
-import { initializeCarousel } from "./components/carousel.js";
-import { showLoader, hideLoader } from "./components/loader.js";
-import { fetchBlogPosts } from "./api/blog-posts-api.js";
-import { fetchCategories } from "./api/blog-categories-api.js";
-import { displaySingleProduct } from "./store/components/single-product.js";
-import { displayFeaturedProducts } from "./store/components/featured-products.js";
-import { fetchProducts } from "./store/api/store-api.js";
-import { displayCategoryPage } from "./store/components/category-page.js"; // Import the new category page JavaScript
+import { fetchRecentBlogPosts } from './api/blog-api.js';
+import { createBlogPostComponent } from './components/blog-components.js';
 
-// Call the functions to initialize components
-fetchAndDisplaySingleBlogPost();
-fetchAndDisplayBlogCategories();
-initializeCarousel();
-showLoader();
-hideLoader();
-setupNavigation();
+document.addEventListener('DOMContentLoaded', () => {
+    displayRecentBlogPosts();
+});
 
-// Call the API functions
-fetchBlogPosts();
-fetchCategories();
+async function displayRecentBlogPosts() {
+  const recentBlogPosts = await fetchRecentBlogPosts();
 
-// Call the Store functions
-displaySingleProduct();
-displayFeaturedProducts();
-fetchProducts();
+  const blogPostsContainer = document.getElementById('blog-posts');
 
-// Call the new category page function
-displayCategoryPage();
+  if (blogPostsContainer) {
+      const numberOfPostsToShow = 3; // Adjust this number as needed
+
+      for (let i = 0; i < numberOfPostsToShow; i++) {
+          const postComponent = createBlogPostComponent(recentBlogPosts[i]);
+          blogPostsContainer.appendChild(postComponent);
+      }
+  } else {
+      console.error('Container element not found.');
+  }
+}
+
+
+
+displayRecentBlogPosts();
 
 //copyright year
 const d = new Date();

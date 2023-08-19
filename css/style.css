@@ -21,7 +21,7 @@
   --clr-secondary-700: #96a953;
   --clr-secondary-900: #708e15;
 
-  --clr-accent-200: #f5edda;
+  --clr-accent-200: #fff9ec;
   --clr-accent-900: #d6bf72;
 
   --clr-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
@@ -96,15 +96,18 @@ h4 {
   letter-spacing: 0.06rem;
   line-height: 1.1;
   text-wrap: balance;
-  word-break: break-all;
+  /* word-break: break-all; */
 }
 
 h1,
 h2 {
-  font-size: var(--fs-600);
   color: var(--clr-neutral-900);
   text-transform: uppercase;
   margin: 1rem 0;
+}
+
+h1 {
+  font-size: var(--fs-600);
 }
 
 h2 {
@@ -113,6 +116,7 @@ h2 {
 
 h3 {
   font-size: var(--fs-400);
+  text-transform: none;
 }
 h4 {
   font-size: var(--fs-300);
