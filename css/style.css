@@ -201,6 +201,7 @@ button {
 
 .banner-wrapper {
   background-color: var(--clr-neutral-300);
+  border-radius: var(--brad-8);
   padding: 1rem;
   margin: 1rem 0;
 }
@@ -218,7 +219,7 @@ button {
   background-color: var(--clr-primary-600);
   padding: var(--whitespace-1);
   border-radius: var(--brad-8);
-  margin: 1rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .backtotop {
@@ -252,7 +253,7 @@ button {
   main {
     line-height: 1.6;
     padding: 0 2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   .material-symbols-rounded {

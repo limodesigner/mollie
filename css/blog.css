@@ -61,6 +61,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  margin-bottom: var(--whitespace-2);
 }
 
 .blog-column-left {
@@ -81,7 +82,7 @@
 .blog-categories,
 .blog-tags {
 
-  padding: 0 1rem;
+  padding: 0 0 3rem 1rem;
 }
 
 .pagination {
