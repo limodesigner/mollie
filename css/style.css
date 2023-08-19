@@ -75,7 +75,7 @@ body {
 }
 
 .background {
-  background-color: var(--clr-accent-200);
+  background-color: var(--clr-nautral-100);
 }
 
 img,
@@ -197,6 +197,12 @@ main {
 button {
   position: relative;
   cursor: pointer;
+}
+
+.banner-wrapper {
+  background-color: var(--clr-neutral-300);
+  padding: 1rem;
+  margin: 1rem 0;
 }
 
 .arrow-right {

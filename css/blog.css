@@ -18,7 +18,7 @@
   margin: 1.5rem 0;
 }
 
-.blog-header {
+.blog-header { 
   color: var(--clr-primary-900);
   border-top-right-radius: var(--brad-4);
   margin: var(--whitespace-1);
@@ -26,6 +26,7 @@
 
 .blog-post .post-image {
   max-width: 100%;
+  border-radius: var(--brad-8);
 }
 
 .blog-post .post-title {
@@ -59,18 +60,19 @@
 .blog-wrapper {
   display: flex;
   flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .blog-column-left {
   background-color: var(--clr-neutral-100);
-  padding: 2rem;
   flex: 2;
   order: 1;
   min-width: 100%;
 }
 
 .blog-column-right {
-  background-color: var(--clr-secondary-500);
+  background-color: var(--clr-secondary-300);
+  border-radius: var(--brad-8);
   flex: 1;
   order: 2;
   min-width: 100%;
@@ -78,8 +80,8 @@
 
 .blog-categories,
 .blog-tags {
-  background-color: var(--clr-secondary-300);
-  padding: var(--whitespace-1);
+
+  padding: 0 1rem;
 }
 
 .pagination {
