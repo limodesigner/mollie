@@ -1,3 +1,5 @@
+/* @author Linda Moenstre 2023 - <linda@digitaldesigner.no> */
+
 #blog-posts {
   display: flex;
   flex-wrap: wrap;
@@ -47,6 +49,42 @@
   background-color: var(--clr-accent-900);
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.column {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.column h2 {
+  margin-bottom: 10px;
+}
+
+.category-item,
+.tag-item {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-item:hover,
+.tag-item:hover {
+  background-color: #f0f0f0;
+}
+
 @media screen and (min-width: 1024px) {
   .post-card {
     width: calc(50% - 40px);
@@ -58,5 +96,15 @@
 
   .blog-section {
     padding: var(--whitespace-2);
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .column {
+    flex: none;
+    width: 50%;
+    max-width: 50%;
   }
 }

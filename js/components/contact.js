@@ -1,3 +1,5 @@
+// @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
+
 const form = document.querySelector("#form");
 const name = document.querySelector("#name");
 const nameError = document.querySelector("#nameError");

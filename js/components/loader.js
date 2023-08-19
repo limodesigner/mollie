@@ -1,3 +1,5 @@
+// @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
+
 window.addEventListener("load", () => {
   const loader = document.querySelector(".loader");
 

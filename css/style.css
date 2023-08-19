@@ -1,4 +1,4 @@
-/* @author Linda Moenstre <linda@digitaldesigner.no> */
+/* @author Linda Moenstre 2023 - <linda@digitaldesigner.no> */
 
 @import url(header.css);
 @import url(main.css);
@@ -22,9 +22,6 @@
   --clr-secondary-900: #708e15;
 
   --clr-accent-200: #f5edda;
-  /* --clr-accent-300: #79b38c;
-  --clr-accent-400: #d5c29a;
-  --clr-accent-800: #007d3c; */
   --clr-accent-900: #d6bf72;
 
   --clr-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
@@ -151,7 +148,7 @@ a:focus,
   text-decoration-style: solid;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
-  text-decoration-color: var(--clr-accent-800);
+  text-decoration-color: var(--clr-secondary-900);
 }
 
 a:visited {
