@@ -7,7 +7,7 @@ export function createBlogPostComponent(post) {
   const postImage = post._embedded["wp:featuredmedia"][0].source_url;
 
   const postHTML = `
-        <div class="blog-post">
+         <div class="blog-post">
             <a href="${postLink}" class="post-link">
                 <img src="${postImage}" alt="${postTitle}" class="post-image">
                 <h3 class="post-title">${postTitle}</h3>
