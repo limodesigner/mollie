@@ -52,3 +52,10 @@
   background-color: var(--clr-secondary-700);
   text-decoration: none;
 }
+
+/* blog category page */
+
+.blog-column-left {
+  background-color: var(--clr-neutral-100);
+  padding: 2rem;
+}
