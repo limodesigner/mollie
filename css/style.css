@@ -11,7 +11,7 @@
   --clr-neutral-300: #f5f5ef;
   --clr-neutral-700: #bfbfbf;
   --clr-neutral-900: #333333;
-  --clr-primary-300: #a3c5d2;
+  --clr-primary-300: #f1f9fc;
   --clr-primary-600: #72a7ba;
   --clr-primary-800: #00778f;
   --clr-primary-900: #00546c;
@@ -43,7 +43,7 @@
   --fs-600: clamp(2.25rem, calc(2.19rem + 0.35vw), 2.5rem);
   --fs-700: clamp(3.38rem, calc(3.28rem + 0.52vw), 3.75rem);
 
-  --whitespace-1: 1rem;
+  --whitespace-1: 1.2rem;
   --whitespace-2: 2rem;
   --whitespace-3: 3rem;
 
@@ -215,13 +215,6 @@ button {
   display: none;
 }
 
-.lightblue {
-  background-color: var(--clr-primary-600);
-  padding: var(--whitespace-1);
-  border-radius: var(--brad-8);
-  margin: 0 0 1rem 0;
-}
-
 .backtotop {
   position: absolute;
   bottom: 30px;
@@ -246,6 +239,44 @@ button {
 
 .material-symbols-rounded {
   font-size: 28px;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+.pulsing-star {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulsate 1.5s ease-in-out infinite;
+  background-color: var(--clr-accent-900);
+  clip-path: polygon(
+    50% 0%,
+    61% 38%,
+    100% 38%,
+    68% 61%,
+    79% 100%,
+    50% 76%,
+    21% 100%,
+    32% 61%,
+    0% 38%,
+    39% 38%
+  );
 }
 
 /*--------MEDIA QUERIES------- */

@@ -1,93 +1,51 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
-import {
-  fetchRecentBlogPosts,
-  fetchBlogPosts,
-  fetchBlogCategories,
-  fetchBlogTags,
-} from "./api/blog-api.js";
-import { createBlogPostComponent } from "./components/blog-components.js";
+// loader
+import { showLoader, hideLoader } from "./loader.js";
+import { fetchBlogPosts, fetchSingleBlogPost } from "./api.js";
 
+showLoader();
+
+setTimeout(() => {
+  hideLoader();
+}, 2000);
+
+// fetch blogposts
 document.addEventListener("DOMContentLoaded", () => {
-  displayRecentBlogPosts();
-  displayBlogCategoriesAndTags();
-});
+  const postIdInput = document.getElementById("postIdInput");
+  const blogPostsContainer = document.getElementById("blog-posts-all");
+  const loader = document.getElementById("loader");
 
-async function displayRecentBlogPosts() {
-  const allBlogPosts = await fetchRecentBlogPosts();
-  const blogPostsContainer = document.getElementById("blog-posts-all"); // Use 'blog-posts-all' ID
+  postIdInput.addEventListener("change", () => {
+    const postId = postIdInput.value;
 
-  if (blogPostsContainer) {
-    allBlogPosts.forEach((post) => {
-      const postComponent = createBlogPostComponent(post);
-      blogPostsContainer.appendChild(postComponent);
-    });
-  } else {
-    console.error("Container element not found.");
-  }
-}
+    // Show the loader while fetching the data
+    loader.style.display = "block";
+    blogPostsContainer.innerHTML = ""; // Clear previous content
 
-async function displayBlogPosts(page) {
-  const perPage = 10; // Adjust the number of posts per page as needed
-  const blogPostsContainer = document.getElementById('blog-posts-all');
+    fetchSingleBlogPost(postId)
+      .then((post) => {
+        // Hide the loader after fetching the data
+        loader.style.display = "none";
 
-  if (blogPostsContainer) {
-      const blogPosts = await fetchBlogPosts(page, perPage);
+        // Create elements to display the post content
+        const titleElement = document.createElement("h2");
+        titleElement.textContent = post.title.rendered;
 
-      if (blogPosts.length > 0) {
-          blogPosts.forEach(post => {
-              const postComponent = createBlogPostComponent(post);
-              blogPostsContainer.appendChild(postComponent);
-          });
+        const contentElement = document.createElement("div");
+        contentElement.innerHTML = post.content.rendered;
 
-          createPagination(blogPostsContainer, page, perPage, blogPosts.length);
-      } else {
-          blogPostsContainer.innerHTML = '<p>No blog posts found.</p>';
-      }
-  } else {
-      console.error('Container element not found.');
-  }
-}
-
-function createPagination(container, currentPage, perPage, totalPosts) {
-  const totalPages = Math.ceil(totalPosts / perPage);
-
-  const paginationContainer = document.createElement('div');
-  paginationContainer.className = 'pagination';
-
-  for (let i = 1; i <= totalPages; i++) {
-      const pageLink = document.createElement('a');
-      pageLink.href = `javascript:void(0);`;
-      pageLink.textContent = i;
-      pageLink.addEventListener('click', () => {
-          container.innerHTML = ''; // Clear the container before fetching new page
-          displayBlogPosts(i);
+        // Append elements to the container
+        blogPostsContainer.appendChild(titleElement);
+        blogPostsContainer.appendChild(contentElement);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        // Hide the loader in case of an error
+        loader.style.display = "none";
       });
-
-      paginationContainer.appendChild(pageLink);
-  }
-
-  container.appendChild(paginationContainer);
-}
-
-async function displayBlogCategoriesAndTags() {
-  const blogCategories = await fetchBlogCategories();
-  const blogTags = await fetchBlogTags();
-
-  const categoriesContainer = document.querySelector(".blog-categories");
-  const tagsContainer = document.querySelector(".blog-tags");
-
-  if (categoriesContainer && tagsContainer) {
-    categoriesContainer.innerHTML = createListItems(blogCategories, "name");
-    tagsContainer.innerHTML = createListItems(blogTags, "name");
-  } else {
-    console.error("Container element not found.");
-  }
-}
-
-function createListItems(items, property) {
-  return items.map((item) => `<p>${item[property]}</p>`).join("");
-}
+  });
+});
 
 //copyright year
 const d = new Date();

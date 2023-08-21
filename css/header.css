@@ -1,9 +1,8 @@
 /* @author Linda Moenstre 2023 - <linda@digitaldesigner.no> */
 
 header {
-  background-color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-300);
   padding-bottom: var(--whitespace-1);
-  box-shadow: var(--clr-shadow);
 }
 
 .hero {
@@ -59,7 +58,7 @@ input {
 
   .logo {
     max-width: 250px;
-    padding: 2rem 0;
+    padding: 1.25rem 0 1rem;
     margin: auto;
   }
 }
@@ -69,8 +68,8 @@ input {
     display: none;
   }
 
-  nav {
-    position: relative;
+  header {
+    padding: 0;
   }
 
   nav ul {
@@ -88,11 +87,10 @@ input {
 
   .logo {
     max-width: 200px;
-    padding: 2rem 1rem;
   }
 
   .mobile__img {
-    max-height: 68px;
+    max-height: 52px;
     margin: 1rem 0;
   }
 

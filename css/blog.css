@@ -18,7 +18,7 @@
   margin: 1.5rem 0;
 }
 
-.blog-header { 
+.blog-header {
   color: var(--clr-primary-900);
   border-top-right-radius: var(--brad-4);
   margin: var(--whitespace-1);
@@ -55,8 +55,6 @@
   text-decoration: none;
 }
 
-/* blog category page */
-
 .blog-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -72,8 +70,7 @@
 }
 
 .blog-column-right {
-  background-color: var(--clr-secondary-300);
-  border-radius: var(--brad-8);
+  border-left: 2px solid var(--clr-primary-300);
   flex: 1;
   order: 2;
   min-width: 100%;
@@ -81,18 +78,7 @@
 
 .blog-categories,
 .blog-tags {
-
   padding: 0 0 3rem 1rem;
-}
-
-.pagination {
-  margin-top: 20px;
-}
-
-.pagination a {
-  margin-right: 10px;
-  text-decoration: none;
-  color: #007bff;
 }
 
 @media screen and (min-width: 768px) {
