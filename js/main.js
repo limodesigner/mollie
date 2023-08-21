@@ -2,7 +2,7 @@
 
 // loader
 import { showLoader, hideLoader } from "./loader.js";
-import { fetchBlogPosts, fetchSingleBlogPost } from "./api.js";
+import { fetchBlogPosts } from "./api.js";
 
 showLoader();
 
@@ -11,40 +11,76 @@ setTimeout(() => {
 }, 2000);
 
 // fetch blogposts
+
 document.addEventListener("DOMContentLoaded", () => {
-  const postIdInput = document.getElementById("postIdInput");
   const blogPostsContainer = document.getElementById("blog-posts-all");
   const loader = document.getElementById("loader");
 
-  postIdInput.addEventListener("change", () => {
-    const postId = postIdInput.value;
+  // Show the loader while fetching the data
+  loader.style.display = "block";
+  blogPostsContainer.innerHTML = ""; // Clear previous content
 
-    // Show the loader while fetching the data
-    loader.style.display = "block";
-    blogPostsContainer.innerHTML = ""; // Clear previous content
+  // Fetch the blog posts
+  fetchBlogPosts()
+    .then((posts) => {
+      loader.style.display = "none";
 
-    fetchSingleBlogPost(postId)
-      .then((post) => {
-        // Hide the loader after fetching the data
-        loader.style.display = "none";
+      blogPostsContainer.classList.remove("hidden");
 
-        // Create elements to display the post content
+      posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      posts.forEach((post) => {
+        const postContainer = document.createElement("div");
+        postContainer.classList.add("blog-post");
+
         const titleElement = document.createElement("h2");
+        titleElement.classList.add("post-title");
         titleElement.textContent = post.title.rendered;
 
-        const contentElement = document.createElement("div");
-        contentElement.innerHTML = post.content.rendered;
+        // Display the post featured image (if available)
+        if (post._embedded && post._embedded["wp:featuredmedia"]) {
+          const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
+          const imageElement = document.createElement("img");
+          imageElement.classList.add("post-image"); // Add "post-image" class
+          imageElement.src = imageUrl;
+          postContainer.appendChild(imageElement);
+        }
 
-        // Append elements to the container
-        blogPostsContainer.appendChild(titleElement);
-        blogPostsContainer.appendChild(contentElement);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-        // Hide the loader in case of an error
-        loader.style.display = "none";
+        const descriptionElement = document.createElement("p");
+        descriptionElement.classList.add("post-excerpt");
+
+        const apiContent = post.content.rendered;
+        const parser = new DOMParser();
+        const parsedContent = parser.parseFromString(apiContent, "text/html");
+        const truncatedExcerpt = parsedContent.body.textContent.substring(
+          0,
+          200
+        );
+
+        descriptionElement.textContent = truncatedExcerpt + "...";
+
+        const readMoreButton = document.createElement("a");
+        readMoreButton.classList.add("read-more-button");
+        readMoreButton.textContent = "Read >>>";
+        readMoreButton.href = post.link; // Link to the full post - must alter
+
+        const readMoreParagraph = document.createElement("p");
+        readMoreParagraph.appendChild(readMoreButton);
+
+        postContainer.appendChild(titleElement);
+        postContainer.appendChild(descriptionElement);
+
+        postContainer.appendChild(readMoreParagraph);
+
+        blogPostsContainer.appendChild(postContainer);
       });
-  });
+    })
+
+    .catch((error) => {
+      console.error("Error:", error);
+      // Hide the loader in case of an error
+      loader.style.display = "none";
+    });
 });
 
 //copyright year
