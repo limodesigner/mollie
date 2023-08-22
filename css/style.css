@@ -261,7 +261,7 @@ button {
   height: 60px;
   position: absolute;
   top: 25%;
-  left: 25%;
+  left: 20%;
   transform: translate(-50%, -50%);
   animation: pulsate 1.5s ease-in-out infinite;
   background-color: var(--clr-accent-900);
