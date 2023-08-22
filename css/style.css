@@ -260,8 +260,8 @@ button {
   width: 60px;
   height: 60px;
   position: absolute;
-  top: 30%;
-  left: 50%;
+  top: 25%;
+  left: 25%;
   transform: translate(-50%, -50%);
   animation: pulsate 1.5s ease-in-out infinite;
   background-color: var(--clr-accent-900);
