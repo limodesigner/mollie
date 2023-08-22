@@ -24,13 +24,80 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="/css/style.css" />
     <script src="/js/main.js" type="module"></script>
+    <script src="/js/store/index.js" type="module"></script>
     <title>Mollie shop | Product</title>
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
-<body>
 
+<body class="background">
+    <noscript>You need to enable Javascript to run this site.</noscript>
+
+    <header>
+        <div class="logo desktop">
+            <a href="index.html">
+                <img src="assets/img/logo-400px.png" alt="Click for Mollie.no homepage"></a>
+        </div>
+
+        <nav class="navbar">
+            <ul>
+
+                <li class="desktop active"><a href="store-categories.html">Shop</a></li>
+                <li class="desktop"><a href="store-featured.html">Featured</a></li>
+                <li class="desktop"><a href="blog-categories.html">Blog</a></li>
+                <!-- <li class="desktop"><a href="contact.html">Contact</a></li> -->
+                <!-- <li class="desktop">
+                    <a href="search.html"><span class="material-symbols-rounded">Search</span></a>
+                </li> -->
+
+                <li class="mobile">
+                    <a href="index.html">
+                        <img src="assets/img/mollie-mobil-menu.png" alt="Click for Mollie.no homepage"
+                            class="mobile__img"></a>
+                <li class="mobile active"><a href="store-categories.html">Shop</a></li>
+                <li class="mobile"><a href="store-featured.html">Featured</a></li>
+                <li class="mobile"><a href="blog-categories.html">Blog</a></li>
+                <!-- <li class="mobile"><a href="contact.html">Contact</a></li> -->
+                <!-- <li class="mobile">
+                    <a href="search.html"><span class="material-symbols-rounded search-btn">Search</span></a>
+                </li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="card-wrapper">
+            <div class="loader hidden" id="loader"></div>
+            <div id="single-product-display" class="grid"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__wrapper">
+            <div class="footer__left">
+                <div class="footer__logo">
+                    <img src="/assets/img/logo-400px-footer.png" alt="Click for homepage">
+                </div>
+
+            </div>
+            <div class="footer__middle">
+                <div>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="assets/img/icon-instagram.svg"
+                            alt="Click to visit our Instagram-page." class="social">
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="assets/img/icon-facebook.svg"
+                            alt="Click to visit our Facebook-page." class="social">
+                    </a>
+                </div>
+            </div>
+            <div class="footer__right">
+                something
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <h3 class="copyright">Copyright <span id="currentYear"></span> &copy; Digital Designer Linda Mønstre
+            </h3>
+        </div>
+    </footer>
 </body>
 
 </html>

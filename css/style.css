@@ -11,7 +11,7 @@
   --clr-neutral-300: #f5f5ef;
   --clr-neutral-700: #bfbfbf;
   --clr-neutral-900: #333333;
-  --clr-primary-300: #f1f9fc;
+  --clr-primary-300: #dfeef2;
   --clr-primary-600: #72a7ba;
   --clr-primary-800: #00778f;
   --clr-primary-900: #00546c;
@@ -114,9 +114,9 @@ h3 {
   text-transform: none;
 }
 h4 {
-  font-size: var(--fs-300);
-  color: var(--clr-accent-900);
-  text-transform: uppercase;
+  font-size: var(--fs-400);
+  color: var(--clr-primary-900);
+  /* text-transform: uppercase; */
 }
 
 p {
@@ -281,6 +281,27 @@ button {
 
 .hidden {
   display: none;
+}
+
+/* ------ products ---------- */
+#product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 4rem;
+}
+
+.product {
+  padding: 20px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 /*--------MEDIA QUERIES------- */

@@ -1,8 +1,9 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
-// loader
 import { showLoader, hideLoader } from "./loader.js";
 import { fetchBlogPosts } from "./api.js";
+
+// loader
 
 showLoader();
 
@@ -10,8 +11,8 @@ setTimeout(() => {
   hideLoader();
 }, 2000);
 
-// fetch blogposts
 
+// fetch blogposts
 document.addEventListener("DOMContentLoaded", () => {
   const blogPostsContainer = document.getElementById("blog-posts-all");
   const loader = document.getElementById("loader");
@@ -20,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
   loader.style.display = "block";
   blogPostsContainer.innerHTML = ""; // Clear previous content
 
-  // Fetch the blog posts
   fetchBlogPosts()
     .then((posts) => {
       loader.style.display = "none";
@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loader.style.display = "none";
     });
 });
+
 
 //copyright year
 const d = new Date();

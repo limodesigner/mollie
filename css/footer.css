@@ -1,7 +1,9 @@
 /* @author Linda Moenstre 2023 - <linda@digitaldesigner.no> */
 
 footer {
-  background-color: var(--clr-primary-800);
+  background-color: var(--clr-primary-300);
+  background-image: url(/assets/img/mollie-background.jpg);
+  background-repeat: repeat;
   padding: var(--whitespace-3);
 }
 
