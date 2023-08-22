@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="/css/style.css" />
     <script src="/js/main.js" type="module"></script>
     <script src="/js/store/index.js" type="module"></script>
+    <script src="store-featured.js"></script>
     <title>Mollie shop | Deals to be made</title>
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -41,7 +42,7 @@
             <ul>
 
                 <li class="desktop"><a href="store-categories.html">Shop</a></li>
-                <li class="desktop active"><a href="store-featured.html">Featured</a></li>
+                <li id="featured-link" class="desktop active"><a href="store-featured.html">Featured</a></li>
                 <li class="desktop"><a href="blog-categories.html">Blog</a></li>
                 <!-- <li class="desktop"><a href="contact.html">Contact</a></li> -->
                 <!-- <li class="desktop">
@@ -53,7 +54,7 @@
                         <img src="assets/img/mollie-mobil-menu.png" alt="Click for Mollie.no homepage"
                             class="mobile__img"></a>
                 <li class="mobile"><a href="store-categories.html">Shop</a></li>
-                <li class="mobile active"><a href="store-featured.html">Featured</a></li>
+                <li id="featured-link" class="mobile active"><a href="store-featured.html">Featured</a></li>
                 <li class="mobile"><a href="blog-categories.html">Blog</a></li>
                 <!-- <li class="mobile"><a href="contact.html">Contact</a></li> -->
                 <!-- <li class="mobile">
@@ -66,7 +67,7 @@
         <div class="card-wrapper">
             <div class="loader hidden" id="loader"></div>
             <div id="featured-container" class="grid"></div>
-        </div>
+          </div>
     </main>
     <footer>
         <div class="footer__wrapper">
@@ -95,6 +96,7 @@
             </h3>
         </div>
     </footer>
+    
 </body>
 
 </html>
