@@ -27,8 +27,22 @@ export async function displayProducts() {
       const productPrice = document.createElement("p");
       productPrice.textContent = "Price: " + product.price;
 
+      const moreButton = document.createElement("button");
+      moreButton.textContent = "More";
+      moreButton.className = "more-button";
+
+      moreButton.addEventListener("click", () => {
+        navigateToSingleProductPage(product.id);
+      });
+
+      function navigateToSingleProductPage(productID) {
+        const singleProductUrl = `store-single-product.html?productID=${productID}`;
+        window.location.href = singleProductUrl;
+      }
+
       productDiv.appendChild(productName);
       productDiv.appendChild(productPrice);
+      productDiv.appendChild(moreButton);
       productContainer.appendChild(productDiv);
     });
   } catch (error) {
