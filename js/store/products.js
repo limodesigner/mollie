@@ -2,6 +2,7 @@
 
 import {
   woocommerceBaseUrl,
+  fetchProducts,
   fetchSingleProd,
 } from "./store-api.js";
 
