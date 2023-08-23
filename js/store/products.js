@@ -1,6 +1,9 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
-import { fetchProducts, fetchSingleProd } from "./store-api.js";
+import {
+  woocommerceBaseUrl,
+  fetchSingleProd,
+} from "./store-api.js";
 
 export async function displayProducts() {
   const loader = document.getElementById("loader");
