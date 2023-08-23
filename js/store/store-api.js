@@ -6,14 +6,11 @@ const consumerSecret = "cs_7f1291d689278bcb23359a9a9662dbac95a4a1a4";
 
 export async function fetchProducts() {
   try {
-    const response = await fetch(
-      woocommerceBaseUrl + "/wc/v3/products",
-      {
-        headers: {
-          Authorization: `Basic ${btoa(`${consumerKey}:${consumerSecret}`)}`,
-        },
-      }
-    );
+    const response = await fetch(woocommerceBaseUrl + "/wc/v3/products", {
+      headers: {
+        Authorization: `Basic ${btoa(`${consumerKey}:${consumerSecret}`)}`,
+      },
+    });
 
     if (!response.ok) {
       throw new Error(
@@ -28,4 +25,3 @@ export async function fetchProducts() {
     return [];
   }
 }
-
