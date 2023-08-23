@@ -1,6 +1,6 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
-import { showLoader, hideLoader } from './loader.js';
+import { showLoader, hideLoader } from "./loader.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const productID = urlParams.get("productID");
