@@ -304,15 +304,14 @@ button {
   margin-bottom: 10px;
 }
 
-/* Add styling for the product details */
 .product-details {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border: 1px solid #ddd;
-  margin: 20px 0;
-  background-color: #f5f5f5;
+  border: 1px solid var(--clr-accent-900);
+  margin: 1rem 0;
+  background-color: #000;
 }
 
 .product-details img {

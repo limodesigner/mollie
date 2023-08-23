@@ -4,7 +4,6 @@ import { showLoader, hideLoader } from "./loader.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const productID = urlParams.get("productID");
-console.log(productID);
 
 const singleProductUrl = `https://www.mollie.no/wp-json/wc/store/products/${productID}`;
 
@@ -28,10 +27,9 @@ async function fetchProductDetails(productID) {
 
 async function displayIndividualProduct(productID) {
   const productDetailsContainer = document.getElementById("product-details");
-  const loader = document.getElementById("loader");
 
   try {
-    loader.style.display = "block";
+    showLoader();
 
     const productDetails = await fetchProductDetails(productID);
 
@@ -62,7 +60,7 @@ async function displayIndividualProduct(productID) {
     productDetailsContainer.innerHTML =
       "An error occurred while fetching product details.";
   } finally {
-    loader.style.display = "none";
+    hideLoader();
   }
 }
 
