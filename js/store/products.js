@@ -36,7 +36,6 @@ export async function displayProducts() {
       });
 
       function navigateToSingleProductPage(id) {
-        // Call the fetchSingleProd function to get the product URL
         fetchSingleProd(id).then((singleProdUrl) => {
           window.location.href = woocommerceBaseUrl + singleProdUrl; // Navigate to the product URL
         });
