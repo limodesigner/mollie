@@ -1,40 +1,57 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
+// Import necessary modules
+import { showLoader, hideLoader } from "../loader.js";
+import { fetchSingleProd } from "./store-api.js";
+
+// Get the product ID from URL
 const urlParams = new URLSearchParams(window.location.search);
-const productID = urlParams.get("productID");
+const id = urlParams.get("id");
 
-const singleProductUrl = `https://www.mollie.no/wp-json/wc/store/products/${productID}`;
-
-async function fetchAndDisplayProductDetails(productID) {
-  const loader = document.getElementById("loader");
+// Function to display single product details
+async function displaySingleProduct(id) {
+  const productDetailsContainer = document.querySelector(".product-details");
 
   try {
-    loader.style.display = "block"; // Show the loader
+    // Show loader while fetching data
+    showLoader();
 
-    const response = await fetch(singleProductUrl);
+    // Fetch the single product details
+    const productDetails = await fetchSingleProd(id);
 
-    if (!response.ok) {
-      throw new Error(
-        `Error fetching product details: ${response.status} ${response.statusText}`
-      );
+    if (!productDetails) {
+      productDetailsContainer.innerHTML = "Product details not available.";
+      return;
     }
 
-    const productDetails = await response.json();
-
-    const productImage = document.querySelector(".product-image");
-    const productName = document.querySelector(".product-name");
-    const productPrice = document.querySelector(".product-price");
-
+    // Create and populate product details elements
+    const productImage = document.createElement("img");
     productImage.src = productDetails.images[0].src;
     productImage.alt = productDetails.name;
-    productName.textContent = productDetails.name;
+
+    const productTitle = document.createElement("h3");
+    productTitle.textContent = productDetails.name;
+
+    const productPrice = document.createElement("p");
     productPrice.textContent = "Price: " + productDetails.price;
+
+    const addToCartButton = document.createElement("button");
+    addToCartButton.textContent = "Add to Cart";
+
+    // Append elements to the container
+    productDetailsContainer.appendChild(productImage);
+    productDetailsContainer.appendChild(productTitle);
+    productDetailsContainer.appendChild(productPrice);
+    productDetailsContainer.appendChild(addToCartButton);
   } catch (error) {
-    console.error("An error occurred while fetching product details:", error);
+    console.error("An error occurred while displaying product details:", error);
+    productDetailsContainer.innerHTML =
+      "An error occurred while fetching product details.";
   } finally {
-    loader.style.display = "none"; // Hide the loader
+    // Hide loader after fetching data
+    hideLoader();
   }
 }
 
-fetchAndDisplayProductDetails(productID);
-
+// Call the displaySingleProduct function with the retrieved product ID
+displaySingleProduct(id);
