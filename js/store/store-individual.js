@@ -1,14 +1,16 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
-import { showLoader, hideLoader } from "./loader.js";
-
 const urlParams = new URLSearchParams(window.location.search);
 const productID = urlParams.get("productID");
 
 const singleProductUrl = `https://www.mollie.no/wp-json/wc/store/products/${productID}`;
 
-async function fetchProductDetails(productID) {
+async function fetchAndDisplayProductDetails(productID) {
+  const loader = document.getElementById("loader");
+
   try {
+    loader.style.display = "block"; // Show the loader
+
     const response = await fetch(singleProductUrl);
 
     if (!response.ok) {
@@ -18,50 +20,21 @@ async function fetchProductDetails(productID) {
     }
 
     const productDetails = await response.json();
-    return productDetails;
-  } catch (error) {
-    console.error("An error occurred while fetching product details:", error);
-    return null;
-  }
-}
 
-async function displayIndividualProduct(productID) {
-  const productDetailsContainer = document.getElementById("product-details");
+    const productImage = document.querySelector(".product-image");
+    const productName = document.querySelector(".product-name");
+    const productPrice = document.querySelector(".product-price");
 
-  try {
-    showLoader();
-
-    const productDetails = await fetchProductDetails(productID);
-
-    if (!productDetails) {
-      productDetailsContainer.innerHTML = "Product details not available.";
-      return;
-    }
-
-    const productImage = document.createElement("img");
     productImage.src = productDetails.images[0].src;
     productImage.alt = productDetails.name;
-
-    const productTitle = document.createElement("h3");
-    productTitle.textContent = productDetails.name;
-
-    const productPrice = document.createElement("p");
+    productName.textContent = productDetails.name;
     productPrice.textContent = "Price: " + productDetails.price;
-
-    const addToCartButton = document.createElement("button");
-    addToCartButton.textContent = "Add to Cart";
-
-    productDetailsContainer.appendChild(productImage);
-    productDetailsContainer.appendChild(productTitle);
-    productDetailsContainer.appendChild(productPrice);
-    productDetailsContainer.appendChild(addToCartButton);
   } catch (error) {
-    console.error("An error occurred while displaying product details:", error);
-    productDetailsContainer.innerHTML =
-      "An error occurred while fetching product details.";
+    console.error("An error occurred while fetching product details:", error);
   } finally {
-    hideLoader();
+    loader.style.display = "none"; // Hide the loader
   }
 }
 
-displayIndividualProduct(productID);
+fetchAndDisplayProductDetails(productID);
+
