@@ -1,6 +1,6 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
-import { fetchProducts, fetchSingleProd } from "./store-api.js";
+import { fetchProducts, fetchSingleProd, woocommerceBaseUrl } from "./store-api.js";
 
 export async function displayProducts() {
   const loader = document.getElementById("loader");
@@ -35,9 +35,9 @@ export async function displayProducts() {
         navigateToSingleProductPage(product.id);
       });
 
-      function navigateToSingleProductPage(productID) {
+      function navigateToSingleProductPage(id) {
         // Call the fetchSingleProd function to get the product URL
-        fetchSingleProd(productID).then((singleProdUrl) => {
+        fetchSingleProd(id).then((singleProdUrl) => {
           window.location.href = woocommerceBaseUrl + singleProdUrl; // Navigate to the product URL
         });
       }
