@@ -12,23 +12,35 @@ footer {
 }
 
 .footer__wrapper {
+  background-color: var(--clr-primary-300);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   place-items: center;
   gap: 1rem;
+  padding: 2rem;
+  border-radius: var(--brad-8);
+  text-align: center;
 }
 
 .footer__logo {
   width: 250px;
 }
+.footer__social {
+  display: flex;
+}
+
+.social {
+
+  margin: 1rem;
+}
 
 .footer__bottom {
-  text-align: center;
-  margin-bottom: 30px;
+  margin: 2rem 0;
 }
 
 .copyright {
   font-size: 14px;
+    align-items: center;
 }
 
 /* ------- MEDIA QUERIES ---------*/

@@ -140,13 +140,16 @@ a:link {
 }
 
 a:hover,
-a:focus,
-.active {
+a:focus {
   color: var(--clr-primary-900);
 }
 
 a:visited {
   color: var(--clr-neutral-900);
+}
+
+.active {
+  border-bottom: 2px dotted var(--clr-primary-900);
 }
 
 li {
