@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const blogPostsContainer = document.getElementById("blog-posts-all");
   const loader = document.getElementById("loader");
 
-  // Show the loader while fetching the data
   loader.style.display = "block";
 
   fetchBlogPosts().then((posts) => {
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         titleElement.classList.add("post-title");
         titleElement.textContent = post.title.rendered;
 
-        // Display the post featured image (if available)
         if (post._embedded && post._embedded["wp:featuredmedia"]) {
           const imageUrl = post._embedded["wp:featuredmedia"][0].source_url;
           const imageElement = document.createElement("img");
@@ -79,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  // Show the loader while fetching the single blog post
   loader.style.display = "block";
 
   fetch(postLink)
@@ -87,12 +84,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) {
         throw new Error("Failed to fetch blog post");
       }
-      return response.text(); // Get the HTML content of the blog post
+      return response.text();
     })
     .then((postContent) => {
       loader.style.display = "none";
 
-      // Create a modal or overlay to display the full blog post content
       const modal = document.createElement("div");
       modal.classList.add("modal");
 
@@ -100,21 +96,21 @@ document.addEventListener("DOMContentLoaded", () => {
       closeModalButton.classList.add("close-modal");
       closeModalButton.innerHTML = "&times;";
       closeModalButton.addEventListener("click", () => {
-        document.body.removeChild(modal); // Remove the modal when the close button is clicked
+        document.body.removeChild(modal);
       });
 
       const postContentElement = document.createElement("div");
       postContentElement.classList.add("post-content");
-      postContentElement.innerHTML = postContent; // Set the fetched HTML content
+      postContentElement.innerHTML = postContent;
 
       modal.appendChild(closeModalButton);
       modal.appendChild(postContentElement);
 
-      document.body.appendChild(modal); // Add the modal to the document
+      document.body.appendChild(modal);
     })
     .catch((error) => {
       console.error("Error fetching blog post:", error);
-      loader.style.display = "none"; // Hide the loader in case of an error
+      loader.style.display = "none";
     });
 });
 
