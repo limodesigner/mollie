@@ -17,15 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Show the loader while fetching the data
   loader.style.display = "block";
 
-  fetchBlogPosts()
-    .then((posts) => {
-      loader.style.display = "none";
+  fetchBlogPosts().then((posts) => {
+    loader.style.display = "none";
 
-      blogPostsContainer.classList.remove("hidden");
+    blogPostsContainer.classList.remove("hidden");
 
-      posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+    posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-      posts.forEach((post) => {
+    posts
+      .forEach((post) => {
         const postContainer = document.createElement("div");
         postContainer.classList.add("blog-post");
 
@@ -65,22 +65,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
         postContainer.appendChild(titleElement);
         postContainer.appendChild(descriptionElement);
-
         postContainer.appendChild(readMoreParagraph);
-
         blogPostsContainer.appendChild(postContainer);
+
+        readMoreButton.addEventListener("click", (event) => {
+          const postLink = post.link; // Get the link to the full post
+        });
+      })
+
+      .catch((error) => {
+        console.error("Error:", error);
+        loader.style.display = "none";
       });
-    })
-
-    .catch((error) => {
-      console.error("Error:", error);
-      // Hide the loader in case of an error
-      loader.style.display = "none";
-    });
-});
-
-readMoreButton.addEventListener("click", (event) => {
-  const postLink = post.link; // Get the link to the full post
+  });
 
   // Show the loader while fetching the single blog post
   loader.style.display = "block";
