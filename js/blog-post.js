@@ -34,7 +34,7 @@ function createHtml(post) {
   blogContainer.innerHTML = postContent;
 
   const logoImage =
-    '<img src="https://mollie.no/wp-content/uploads/2023/08/logo-400px-footer.png" alt="Logo">';
+    '<img src="https://mollie.no/wp-content/uploads/2023/08/logo-400px.png" alt="Logo">';
 
   const html = `
     <div class="post-content">
