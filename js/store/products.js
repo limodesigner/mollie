@@ -35,11 +35,7 @@ export async function displayProducts() {
         navigateToSingleProductPage(product.id);
       });
 
-    function navigateToSingleProductPage(id) {
-        fetchSingleProd(id).then((singleProdUrl) => {
-          window.location.href = woocommerceBaseUrl + singleProdUrl; 
-        });
-      }
+
 
       productDiv.appendChild(productName);
       productDiv.appendChild(productPrice);
@@ -51,4 +47,10 @@ export async function displayProducts() {
   } finally {
     loader.style.display = "none";
   }
+}
+
+function navigateToSingleProductPage(id) {
+  fetchSingleProd(id).then((singleProdUrl) => {
+    window.location.href = woocommerceBaseUrl + singleProdUrl; 
+  });
 }
