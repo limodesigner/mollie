@@ -1,7 +1,6 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
 const wordpressBaseUrl = "https://mollie.no/wp-json/wp/v2/posts?_embed";
-// const singleBlogpostUrl = "${wordpressBaseUrl}/${id}";
 
 export async function fetchBlogPosts() {
   return fetch(wordpressBaseUrl)

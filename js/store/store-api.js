@@ -27,7 +27,7 @@ export async function fetchProducts() {
 }
 
 export function fetchSingleProd(id) {
-  const singleProdUrl = `${woocommerceBaseUrl}/${id}?consumer_key=${consumerKey}&consumer_secret=${consumerSecret}`;
+  const singleProdUrl = `${woocommerceBaseUrl}/${id}_embed?consumer_key=${consumerKey}&consumer_secret=${consumerSecret}`;
 
   return fetch(singleProdUrl)
     .then((response) => {
