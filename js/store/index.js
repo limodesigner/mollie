@@ -5,4 +5,3 @@ import { displayProducts } from "./products.js";
 document.addEventListener("DOMContentLoaded", () => {
   displayProducts();
 });
-
