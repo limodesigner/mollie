@@ -2,8 +2,6 @@
 
 footer {
   background-color: var(--clr-primary-300);
-  background-image: url(/assets/img/mollie-background.jpg);
-  background-repeat: repeat;
   padding: var(--whitespace-3);
 }
 
@@ -29,18 +27,20 @@ footer {
   display: flex;
 }
 
-.social {
-
-  margin: 1rem;
+.footer__social img {
+  background-color: var(--clr-secondary-700);
+  padding: 0.5rem;
+  border-radius: var(--brad-8);
+  box-shadow: var(--clr-shadow-up);
 }
 
-.footer__bottom {
-  margin: 2rem 0;
+.social {
+  margin: 1rem;
 }
 
 .copyright {
   font-size: 14px;
-    align-items: center;
+  place-content: center;
 }
 
 /* ------- MEDIA QUERIES ---------*/
