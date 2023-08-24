@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Show the loader while fetching the data
   loader.style.display = "block";
-  blogPostsContainer.innerHTML = ""; // Clear previous content
+
 
   fetchBlogPosts()
     .then((posts) => {
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const readMoreButton = document.createElement("a");
         readMoreButton.classList.add("read-more-button");
         readMoreButton.textContent = "Read >>>";
-        readMoreButton.href = post.link; // Link to the full post - must alter
+        readMoreButton.href = `blog-post.html?postId=${post.id}`; 
 
         const readMoreParagraph = document.createElement("p");
         readMoreParagraph.appendChild(readMoreButton);
@@ -80,6 +80,49 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error:", error);
       // Hide the loader in case of an error
       loader.style.display = "none";
+    });
+});
+
+readMoreButton.addEventListener("click", (event) => {
+
+  const postLink = post.link; // Get the link to the full post
+
+  // Show the loader while fetching the single blog post
+  loader.style.display = "block";
+
+  fetch(postLink)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to fetch blog post");
+      }
+      return response.text(); // Get the HTML content of the blog post
+    })
+    .then((postContent) => {
+      loader.style.display = "none";
+
+      // Create a modal or overlay to display the full blog post content
+      const modal = document.createElement("div");
+      modal.classList.add("modal");
+
+      const closeModalButton = document.createElement("span");
+      closeModalButton.classList.add("close-modal");
+      closeModalButton.innerHTML = "&times;";
+      closeModalButton.addEventListener("click", () => {
+        document.body.removeChild(modal); // Remove the modal when the close button is clicked
+      });
+
+      const postContentElement = document.createElement("div");
+      postContentElement.classList.add("post-content");
+      postContentElement.innerHTML = postContent; // Set the fetched HTML content
+
+      modal.appendChild(closeModalButton);
+      modal.appendChild(postContentElement);
+
+      document.body.appendChild(modal); // Add the modal to the document
+    })
+    .catch((error) => {
+      console.error("Error fetching blog post:", error);
+      loader.style.display = "none"; // Hide the loader in case of an error
     });
 });
 
