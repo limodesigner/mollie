@@ -3,14 +3,11 @@
 import { showLoader, hideLoader } from "./loader.js";
 import { fetchBlogPosts } from "./api.js";
 
-// loader
-
 showLoader();
 
 setTimeout(() => {
   hideLoader();
 }, 2000);
-
 
 // fetch blogposts
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Show the loader while fetching the data
   loader.style.display = "block";
-
 
   fetchBlogPosts()
     .then((posts) => {
@@ -62,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const readMoreButton = document.createElement("a");
         readMoreButton.classList.add("read-more-button");
         readMoreButton.textContent = "Read >>>";
-        readMoreButton.href = `blog-post.html?postId=${post.id}`; 
+        readMoreButton.href = `blog-post.html?id=${post.id}`;
 
         const readMoreParagraph = document.createElement("p");
         readMoreParagraph.appendChild(readMoreButton);
@@ -84,7 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 readMoreButton.addEventListener("click", (event) => {
-
   const postLink = post.link; // Get the link to the full post
 
   // Show the loader while fetching the single blog post
@@ -125,7 +120,6 @@ readMoreButton.addEventListener("click", (event) => {
       loader.style.display = "none"; // Hide the loader in case of an error
     });
 });
-
 
 //copyright year
 const d = new Date();

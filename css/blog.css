@@ -37,6 +37,14 @@
   margin-bottom: 10px;
 }
 
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: var(--brad-8);
+}
+
 .read-more-button {
   display: inline-block;
   background-color: var(--clr-secondary-300);

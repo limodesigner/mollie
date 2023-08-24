@@ -24,7 +24,8 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="/css/style.css" />
     <script src="/js/main.js" type="module"></script>
-    <title>Mollie blog | A Catpost</title>
+    <script src="/js/blog-post.js" type="module"></script>
+    <title id="newtitle"></title>
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -64,7 +65,9 @@
     </header>
 
     <main>
-
+        <div class="loader"></div>
+        <h1 id="post-title"></h1>
+        <div id="post-content" class="post-content"></div>
     </main>
     <footer>
         <div class="footer__wrapper">

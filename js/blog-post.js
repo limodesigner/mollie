@@ -1,26 +1,50 @@
-// Get the postId from the URL query parameters
-const urlParams = new URLSearchParams(window.location.search);
-const postId = urlParams.get("postId");
+// @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
-// Fetch and display the content of the individual blog post
-fetch(`https://mollie.no/wp-json/wp/v2/posts/${postId}`)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Failed to fetch blog post");
-    }
-    return response.json();
-  })
-  .then((post) => {
-    // Display the blog post content in the page
-    const postTitleElement = document.createElement("h2");
-    postTitleElement.textContent = post.title.rendered;
+import { showLoader, hideLoader } from "./loader.js";
 
-    const postContentElement = document.createElement("div");
-    postContentElement.innerHTML = post.content.rendered;
+const blogContainer = document.querySelector(".post-content");
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
 
-    document.getElementById("post-title").appendChild(postTitleElement);
-    document.getElementById("post-content").appendChild(postContentElement);
-  })
-  .catch((error) => {
-    console.error("Error fetching blog post:", error);
-  });
+const postUrl = "https://mollie.no/wp-json/wp/v2/posts";
+const specificPostUrl = postUrl + `/${id}?_embed`;
+
+showLoader();
+
+async function getPost() {
+  try {
+    const response = await fetch(specificPostUrl);
+    const post = await response.json();
+    createHtml(post);
+  } catch (error) {
+    console.error({ error: "Could not load content" });
+  } finally {
+    hideLoader();
+  }
+}
+
+getPost();
+
+function createHtml(post) {
+  const postTitle = post.title.rendered;
+  const postContent = post.content.rendered;
+
+  document.getElementById("post-title").textContent = postTitle;
+  blogContainer.innerHTML = postContent;
+
+  const logoImage =
+    '<img src="https://mollie.no/wp-content/uploads/2023/08/logo-400px-footer.png" alt="Logo">';
+
+  const html = `
+    <div class="post-content">
+      ${postContent}
+      ${logoImage}
+    </div>
+  `;
+
+  blogContainer.innerHTML = html;
+
+  const changeTitle = document.getElementsByClassName("newtitle").innerText;
+  document.title = `${postTitle}`;
+}
