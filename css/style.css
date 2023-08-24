@@ -197,8 +197,25 @@ button {
   cursor: pointer;
 }
 
+button.more-button {
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--clr-primary-900);
+  color: #fff;
+  border: none;
+  border-radius: var(--brad-8);
+  padding: 0.75rem 1.5rem;
+  box-shadow: var(--clr-shadow);
+}
+
+button.more-button:hover,
+button.more-button:focus,
+button.more-button:active {
+  background-color: var(--clr-secondary-700);
+}
+
 .banner-wrapper {
-  background-color: var(--clr-neutral-300);
+  background-color: var(--clr-primary-300);
   border-radius: var(--brad-8);
   padding: 1rem;
   margin: 1rem 0;
