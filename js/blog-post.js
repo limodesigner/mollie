@@ -33,18 +33,6 @@ function createHtml(post) {
   document.getElementById("post-title").textContent = postTitle;
   blogContainer.innerHTML = postContent;
 
-  const logoImage =
-    '<img src="https://mollie.no/wp-content/uploads/2023/08/logo-250px-2.png" alt="Logo">';
-
-  const html = `
-    <div class="post-content">
-      ${postContent}
-      ${logoImage}
-    </div>
-  `;
-
-  blogContainer.innerHTML = html;
-
   const changeTitle = document.getElementsByClassName("newtitle").innerText;
   document.title = `${postTitle}`;
 }
