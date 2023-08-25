@@ -1,12 +1,12 @@
-// @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
-
 import { showLoader, hideLoader } from "../loader.js";
 import { fetchSingleProd } from "./store-api.js";
 
-const productDetailsContainer = document.querySelector(".product-details");
+const singleProductContainer = document.querySelector(".product-details");
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
+const id = params.get("id");
 
-const urlParams = new URLSearchParams(location.search);
-const id = urlParams.get("id");
+showLoader();
 
 async function displaySingleProduct() {
   try {
@@ -14,35 +14,39 @@ async function displaySingleProduct() {
 
     const productDetails = await fetchSingleProd(id);
 
-    if (!productDetails) {
-      productDetailsContainer.innerHTML = "Product details not available.";
+    if (!productDetails || !productDetails.images || productDetails.images.length === 0) {
+      singleProductContainer.innerHTML = "Product details not available.";
       return;
     }
 
+    const { images, name, price } = productDetails;
+
     const productImage = document.createElement("img");
-    productImage.src = productDetails.images[0].src;
-    productImage.alt = productDetails.name;
+    productImage.src = images[0]?.src || "";
+    productImage.alt = name;
 
     const productTitle = document.createElement("h3");
-    productTitle.textContent = productDetails.name;
+    productTitle.textContent = name;
 
     const productPrice = document.createElement("p");
-    productPrice.textContent = "Price: " + productDetails.price;
+    productPrice.textContent = "Price: " + price;
 
     const addToCartButton = document.createElement("button");
     addToCartButton.textContent = "Add to Cart";
 
-    productDetailsContainer.appendChild(productImage);
-    productDetailsContainer.appendChild(productTitle);
-    productDetailsContainer.appendChild(productPrice);
-    productDetailsContainer.appendChild(addToCartButton);
+    singleProductContainer.appendChild(productImage);
+    singleProductContainer.appendChild(productTitle);
+    singleProductContainer.appendChild(productPrice);
+    singleProductContainer.appendChild(addToCartButton);
   } catch (error) {
     console.error("An error occurred while displaying product details:", error);
-    productDetailsContainer.innerHTML =
+    singleProductContainer.innerHTML =
       "An error occurred while fetching product details.";
   } finally {
     hideLoader();
   }
 }
 
-displaySingleProduct();
+document.addEventListener("DOMContentLoaded", () => {
+  displaySingleProduct();
+});

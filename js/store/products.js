@@ -1,14 +1,21 @@
+import { showLoader, hideLoader } from "../loader.js";
 import { fetchProducts, woocommerceBaseUrl } from "./store-api.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  displayProducts();
+});
 
 export async function displayProducts() {
   const loader = document.getElementById("loader");
   const productContainer = document.getElementById("product-container");
 
-  try {
-    loader.style.display = "block";
-    productContainer.innerHTML = "";
+  try {  
+    showLoader();
 
     const products = await fetchProducts();
+
+    // Clear previous content before appending new products
+    productContainer.innerHTML = "";
 
     products.forEach((product) => {
       const productDiv = document.createElement("div");
@@ -18,7 +25,7 @@ export async function displayProducts() {
       productName.textContent = product.name;
 
       const thumbnailImage = document.createElement("img");
-      thumbnailImage.src = product.images[0].src;
+      thumbnailImage.src = product.images[0]?.src || "";
       thumbnailImage.alt = product.name;
       productDiv.appendChild(thumbnailImage);
 
@@ -41,6 +48,6 @@ export async function displayProducts() {
   } catch (error) {
     console.error("An error occurred:", error);
   } finally {
-    loader.style.display = "none";
+    hideLoader();
   }
 }
