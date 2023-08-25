@@ -26,18 +26,14 @@ export async function fetchProducts() {
   }
 }
 
-export function fetchSingleProd(id) {
-  const singleProdUrl = `${woocommerceBaseUrl}/${id}_embed?consumer_key=${consumerKey}&consumer_secret=${consumerSecret}`;
-
-  return fetch(singleProdUrl)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Failed to fetch product");
-      }
-      return response.json();
-    })
-    .catch((error) => {
-      console.error(error);
-      throw error;
-    });
+export async function fetchSingleProd(id) {
+  try {
+    const response = await fetch(
+      `${woocommerceBaseUrl}/wp-json/wc/store/products/${id}`
+    );
+    const product = await response.json();
+    return product;
+  } catch (error) {
+    throw new Error("Failed to fetch product");
+  }
 }

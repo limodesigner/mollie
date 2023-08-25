@@ -1,15 +1,14 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
-// Import necessary modules
 import { showLoader, hideLoader } from "../loader.js";
 import { fetchSingleProd } from "./store-api.js";
 
-const urlParams = new URLSearchParams(window.location.search);
+const productDetailsContainer = document.querySelector(".product-details");
+
+const urlParams = new URLSearchParams(location.search);
 const id = urlParams.get("id");
 
-async function displaySingleProduct(id) {
-  const productDetailsContainer = document.querySelector(".product-details");
-
+async function displaySingleProduct() {
   try {
     showLoader();
 
@@ -42,7 +41,6 @@ async function displaySingleProduct(id) {
     productDetailsContainer.innerHTML =
       "An error occurred while fetching product details.";
   } finally {
- 
     hideLoader();
   }
 }

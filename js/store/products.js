@@ -1,6 +1,10 @@
 // @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
 
-import { fetchProducts, fetchSingleProd, woocommerceBaseUrl } from "./store-api.js";
+import {
+  fetchProducts,
+  fetchSingleProd,
+  woocommerceBaseUrl,
+} from "./store-api.js";
 
 export async function displayProducts() {
   const loader = document.getElementById("loader");
@@ -31,11 +35,16 @@ export async function displayProducts() {
       moreButton.textContent = "More";
       moreButton.className = "more-button";
 
-      moreButton.addEventListener("click", () => {
-        navigateToSingleProductPage(product.id);
+      moreButton.addEventListener("click", async () => {
+        const productId = product.id;
+
+        try {
+          const singleProd = await fetchSingleProd(productId);
+          navigateToSingleProductPage(singleProd.id);
+        } catch (error) {
+          console.error("Error fetching product:", error);
+        }
       });
-
-
 
       productDiv.appendChild(productName);
       productDiv.appendChild(productPrice);
@@ -49,8 +58,6 @@ export async function displayProducts() {
   }
 }
 
-function navigateToSingleProductPage(id) {
-  fetchSingleProd(id).then((singleProdUrl) => {
-    window.location.href = woocommerceBaseUrl + singleProdUrl; 
-  });
+function navigateToSingleProductPage(productId) {
+  window.location.href = `${woocommerceBaseUrl}/${productId}`;
 }

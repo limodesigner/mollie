@@ -124,6 +124,12 @@ p {
   color: var(--clr-neutral-900);
 }
 
+.breadcrumb {
+  font-size: var(--fs-300);
+  margin-bottom: var(--whitespace-3);
+  text-transform: none;
+}
+
 ::selection {
   background-color: var(--clr-secondary-300);
 }
