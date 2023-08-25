@@ -9,7 +9,7 @@ export async function displayProducts() {
   const loader = document.getElementById("loader");
   const productContainer = document.getElementById("product-container");
 
-  try {  
+  try {
     showLoader();
 
     const products = await fetchProducts();
@@ -32,13 +32,10 @@ export async function displayProducts() {
       const productPrice = document.createElement("p");
       productPrice.textContent = "Price: " + product.price;
 
-      const moreButton = document.createElement("button");
+      const moreButton = document.createElement("a");
       moreButton.textContent = "More";
       moreButton.className = "more-button";
-
-      moreButton.addEventListener("click", () => {
-        window.location.href = `${woocommerceBaseUrl}/${product.id}`;
-      });
+      moreButton.href = `product.html?id=${product.id}`;
 
       productDiv.appendChild(productName);
       productDiv.appendChild(productPrice);

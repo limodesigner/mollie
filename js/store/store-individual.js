@@ -6,7 +6,9 @@ const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 const id = params.get("id");
 
-showLoader();
+if (!id) {
+  location.href = "/";
+}
 
 async function displaySingleProduct() {
   try {
@@ -14,7 +16,11 @@ async function displaySingleProduct() {
 
     const productDetails = await fetchSingleProd(id);
 
-    if (!productDetails || !productDetails.images || productDetails.images.length === 0) {
+    if (
+      !productDetails ||
+      !productDetails.images ||
+      productDetails.images.length === 0
+    ) {
       singleProductContainer.innerHTML = "Product details not available.";
       return;
     }
