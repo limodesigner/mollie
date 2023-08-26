@@ -1,5 +1,5 @@
 import { showLoader, hideLoader } from "../loader.js";
-import { fetchProducts, woocommerceBaseUrl } from "./store-api.js";
+import { fetchProducts } from "./store-api.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   displayProducts();
@@ -30,7 +30,7 @@ export async function displayProducts() {
       productDiv.appendChild(thumbnailImage);
 
       const productPrice = document.createElement("p");
-      productPrice.textContent = "Price: " + product.price;
+      productPrice.textContent = "Price: " + "£" + product.price;
 
       const moreButton = document.createElement("a");
       moreButton.textContent = "More";

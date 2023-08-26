@@ -170,8 +170,7 @@ li {
 
 main {
   max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   padding: 0.75rem;
 }
 
@@ -198,26 +197,21 @@ main {
   gap: 1rem;
 }
 
-button {
-  position: relative;
-  cursor: pointer;
-}
-
-button.more-button {
+.more-button {
   font-weight: bold;
   text-transform: uppercase;
-  background-color: var(--clr-primary-900);
-  color: #fff;
+  background-color: var(--clr-secondary-500);
+  color: var(--clr-nautral-100);
   letter-spacing: 2px;
   border: none;
   border-radius: var(--brad-8);
-  padding: 0.75rem 1.5rem;
+  padding: 0.25rem 0.75rem;
   box-shadow: var(--clr-shadow);
 }
 
-button.more-button:hover,
-button.more-button:focus,
-button.more-button:active {
+.more-button:hover,
+.more-button:focus,
+.more-button:active {
   background-color: var(--clr-secondary-700);
 }
 
@@ -326,7 +320,7 @@ button.more-button:active {
   margin-bottom: 10px;
 }
 
-.product-details { 
+.product-details {
   display: grid;
   grid-template-columns: minmax(200px, 1fr);
   padding: var(--whitespace-2);
@@ -343,7 +337,7 @@ button.more-button:active {
   background-color: var(--clr-primary-900);
   color: var(--clr-neutral-100);
   border: none;
-  padding: .5rem .75rem;
+  padding: 0.5rem 0.75rem;
   border-radius: var(--brad-8);
   width: fit-content;
   cursor: pointer;
@@ -373,6 +367,5 @@ button.more-button:active {
   }
 
   .product-details {
-   
   }
 }
