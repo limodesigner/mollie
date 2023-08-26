@@ -23,8 +23,8 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="/css/style.css" />
-    <script src="/js/store/store-featured.js"></script>
-    <title>Mollie shop | Deals to be made</title>
+    <script src="/js/store/featured.js" type="module"></script>
+    <title>Mollie shop | Grrrrreat products to find!</title>
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -38,7 +38,6 @@
 
         <nav class="navbar">
             <ul>
-
                 <li class="desktop"><a href="store-categories.html">Shop</a></li>
                 <li id="featured-link" class="desktop active"><a href="store-featured.html">Featured</a></li>
                 <li class="desktop"><a href="blog-categories.html">Blog</a></li>
@@ -53,13 +52,12 @@
             </ul>
         </nav>
     </header>
-    <main>
 
+    <main>
         <div class="card-wrapper">
             <div class="loader hidden" id="loader"></div>
-            <div id="featured-container" class="grid"></div>
+            <div id="featured-container" class="featured-container grid"></div>
         </div>
-
     </main>
     <footer>
         <div class="footer__wrapper">

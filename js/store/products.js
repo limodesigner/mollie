@@ -1,3 +1,5 @@
+// @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
+
 import { showLoader, hideLoader } from "../loader.js";
 import { fetchProducts } from "./store-api.js";
 
