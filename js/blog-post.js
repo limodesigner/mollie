@@ -35,7 +35,6 @@ function createHtml(post) {
   document.title = `${postTitle}`;
 }
 
-//copyright year
 const d = new Date();
 let year = d.getFullYear();
 document.getElementById("currentYear").innerHTML = year;

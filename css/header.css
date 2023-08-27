@@ -4,6 +4,7 @@ header {
   background-color: var(--clr-neutral-100);
   background-image: url(../assets/img/mollie-dottedbgr.jpg);
   padding-bottom: 0.75rem;
+  box-shadow: var(--clr-shadow);
 }
 
 .hero {

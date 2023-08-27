@@ -42,10 +42,10 @@ async function displaySingleProduct() {
     const addToCartButton = document.createElement("a");
     addToCartButton.textContent = "Add to Cart";
 
-    const productDescription = document.createElement("p"); 
+    const productDescription = document.createElement("p");
     productDescription.textContent = description;
 
-    const productStockquantity = document.createElement("div");  
+    const productStockquantity = document.createElement("div");
     productStockquantity.textContent = "Stock level: " + stock_quantity;
 
     singleProductContainer.appendChild(productImage);
@@ -71,3 +71,7 @@ async function displaySingleProduct() {
 document.addEventListener("DOMContentLoaded", () => {
   displaySingleProduct();
 });
+
+const d = new Date();
+let year = d.getFullYear();
+document.getElementById("currentYear").innerHTML = year;

@@ -61,3 +61,7 @@ async function fetchAndDisplayFeaturedProducts() {
 }
 
 document.addEventListener("DOMContentLoaded", fetchAndDisplayFeaturedProducts);
+
+const d = new Date();
+let year = d.getFullYear();
+document.getElementById("currentYear").innerHTML = year;
