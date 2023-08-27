@@ -34,10 +34,6 @@ This means that there is no requirement to do theming work in PHP, since WordPre
 - Make sure that all changes to your project are committed and pushed
 - Deploy your cross-course project to Netlify (Optional, Recommended, \*)
 
-# Level 2 Process (optional)
-
-Implement client-side sort and filter options for products. Some examples include sorting by price, filtering by custom attributes or featured status.
-
 # Delivery
 
 The following links are required for delivery:

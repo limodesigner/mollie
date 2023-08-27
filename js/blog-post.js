@@ -1,5 +1,3 @@
-// @author Linda Moenstre 2023 - <linda@digitaldesigner.no>
-
 import { showLoader, hideLoader } from "./loader.js";
 
 const blogContainer = document.querySelector(".post-content");
@@ -33,6 +31,11 @@ function createHtml(post) {
   document.getElementById("post-title").textContent = postTitle;
   blogContainer.innerHTML = postContent;
 
-  const changeTitle = document.getElementsByClassName("newtitle").innerText;
+  const changeTitle = document.querySelector(".newtitle").innerText;
   document.title = `${postTitle}`;
 }
+
+//copyright year
+const d = new Date();
+let year = d.getFullYear();
+document.getElementById("currentYear").innerHTML = year;
