@@ -231,28 +231,6 @@ main {
   display: none;
 }
 
-.backtotop {
-  position: absolute;
-  bottom: 30px;
-  right: 20px;
-  width: 34px;
-  height: 34px;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
-  border-radius: var(--brad-50);
-  background-color: var(--clr-primary-900);
-  box-shadow: var(--clr-shadow-nav);
-  display: none;
-}
-
-.backtotop:hover,
-.backtotop:focus {
-  background-color: var(--clr-primary-800);
-  color: var(--clr-neutral-900);
-  opacity: 0.8;
-}
-
 .material-symbols-rounded {
   font-size: 28px;
 }
@@ -360,12 +338,5 @@ div.featured-container {
 
   .material-symbols-rounded {
     font-size: 32px;
-  }
-
-  .backtotop {
-    bottom: 40px;
-    right: 50px;
-    width: 48px;
-    height: 48px;
   }
 }
